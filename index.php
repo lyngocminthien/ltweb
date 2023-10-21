@@ -15,11 +15,11 @@ require "conn.php";
     <link rel="stylesheet" href="Css/cart.css">
     <link rel="stylesheet" href="Css/donhang.css">
     <link rel="stylesheet" href="Css/cmt.css">
-    <link rel="icon" type="image/x-icon" href="Image/Icon/Icon.png">
+    <link rel="icon" type="image/x-icon" href="Image/Icon/logo_web.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>NC STORE</title>
+    <title>Apple Store</title>
 </head>
 
 <body>
@@ -44,23 +44,21 @@ require "conn.php";
         <div class="menubar">
             <div class="container">
                 <?php
-            require "pages/menubar.php";
-            ?>
+                require "pages/menubar.php";
+                ?>
             </div>
 
     </section>
     <!-- -----------------Body-Slider-Procduce--------------------- -->
     <section class="body">
         <?php
-                if(isset($_GET["url"]))
-                {
-                    $p=$_GET["url"];//pages/$p.".php"
-                    require "pages/".$p.".php";
-                }
-                else{
-                    require "pages/home.php";
-                }
-            ?>
+        if (isset($_GET["url"])) {
+            $p = $_GET["url"]; //pages/$p.".php"
+            require "pages/" . $p . ".php";
+        } else {
+            require "pages/home.php";
+        }
+        ?>
     </section>
 
 
