@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #2d5891;
+  --secondary-color: #fff;
+  --primary-hover-color: #f99a0e;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  display: inline-block;
+  background-color: initial;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,107 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px 20px;
+}
+
+.navigation .logo_apple-store {
+  width: 80px;
+  cursor: pointer;
+}
+
+.navigation .logo_apple-store:hover {
+  transform: scale(0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.navigation a img {
+  width: 40px;
+}
+.navigation a img:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*-------------------- Nav-top --------------------- */
+.nav-top {
+  margin-bottom: 30px;
+}
+
+.nav-top_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-top_search {
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-top_search img {
+  position: relative;
+  top: 7px;
+  width: 33px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.nav-top_search img:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-top_search input {
+  width: 800px;
+  font-size: 18px;
+  padding: 15px 10px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  transition: 300ms ease-in-out;
+}
+
+.nav-top_search input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+}
+
+/*-------------------- Nav-bottom --------------------- */
+.nav-bottom {
+  height: 50px;
+}
+
+.nav-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  width: 19%;
+  text-align: center;
+}
+
+.nav-item-link {
+  width: 100%;
+  font-size: 19px;
+  padding: 5px;
+  color: #000;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.nav-item-link:hover {
+  box-shadow: inset 100px 0 0 0 #86b6e6;
+}
