@@ -24,14 +24,11 @@ a {
 }
 header {
   background-color: rgba(143, 114, 87, 0.397);
-  background-image: url(../Image/BannerCam.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 550px;
   text-align: center;
-  padding: 50px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .event {

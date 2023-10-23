@@ -35,52 +35,51 @@
             </div>
             <div class="slider-product-one-content-container">
                 <div class="slider-product-one-content-items-content">
-                    <?php                       
-                            $re=laySale($conn,20);
-                            $count = 0;
-                            $Number_Sp = 5;
-                            while($r=mysqli_fetch_array($re))
-                            {
-                                if ($count % $Number_Sp == 0) {
-                                    echo '<div class="slider-product-one-content-items">';
-                                }
-                                ?>
-                            <div class="slider-product-one-content-item">
-
-                                <a href="index.php?url=ShowRoom&id=<?php echo $r['MaSP']?>">
-
-                                    <div class="slider-product-one-content-item-img">
-                                        <img class="phone-img" src="Image/<?php echo $r["Hinh"]; ?>">
-                                    </div>
-                                    <div class="slider-product-one-content-item-text">
-                                        <li><?php echo $r["TenSP"]; ?></li>
-                                        <li><?php echo $r["GiaCu"]=number_format($r["GiaCu"],0); ?><sup>đ</sup></li>
-                                        <li><?php echo $r["GiaMoi"]=number_format($r["GiaMoi"],0); ?><sup>đ</sup>
-                                            <div> Giảm: <?php echo $r["GiamGia"];?></span<sup>%</sup></div>
-                                        </li>
-                                        <li>
-                                            <p>Yêu thích:</p>
-                                            <div class="icon">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </li>
-                                    </div>
-                                </a>
-                            </div>
                     <?php
-                                $count++;
-                                if ($count % $Number_Sp == 0) {
-                                    echo '</div>';
-                                }
-                            }
-                            if ($count % $Number_Sp != 0) {
-                                echo '</div>';
-                            }
-                        ?>
+                    $re = laySale($conn, 20);
+                    $count = 0;
+                    $Number_Sp = 5;
+                    while ($r = mysqli_fetch_array($re)) {
+                        if ($count % $Number_Sp == 0) {
+                            echo '<div class="slider-product-one-content-items">';
+                        }
+                    ?>
+                    <div class="slider-product-one-content-item">
+
+                        <a href="index.php?url=ShowRoom&id=<?php echo $r['MaSP'] ?>">
+
+                            <div class="slider-product-one-content-item-img">
+                                <img class="phone-img" src="Image/<?php echo $r["Hinh"]; ?>">
+                            </div>
+                            <div class="slider-product-one-content-item-text">
+                                <li><?php echo $r["TenSP"]; ?></li>
+                                <li><?php echo $r["GiaCu"] = number_format($r["GiaCu"], 0); ?><sup>đ</sup></li>
+                                <li><?php echo $r["GiaMoi"] = number_format($r["GiaMoi"], 0); ?><sup>đ</sup>
+                                    <div> Giảm: <?php echo $r["GiamGia"]; ?></span<sup>%</sup></div>
+                                </li>
+                                <li>
+                                    <p>Yêu thích:</p>
+                                    <div class="icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </li>
+                            </div>
+                        </a>
+                    </div>
+                    <?php
+                        $count++;
+                        if ($count % $Number_Sp == 0) {
+                            echo '</div>';
+                        }
+                    }
+                    if ($count % $Number_Sp != 0) {
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
                 <div class="slider-product-one-content-btn">
                     <i class="fa-solid fa-circle-arrow-left fa-circle-arrow-left-two"></i>
@@ -97,20 +96,19 @@
         </div>
         <div class="container margin-top">
             <?php
-                $re=laySPNoiBat($conn);
-                echo '<div style="display: flex; flex-wrap: wrap;">'; 
-                    while($r=mysqli_fetch_array($re))
-                    {
-                    ?>
+            $re = laySPNoiBat($conn);
+            echo '<div style="display: flex; flex-wrap: wrap;">';
+            while ($r = mysqli_fetch_array($re)) {
+            ?>
             <div class="slider-product-one-content-item">
-                <a href="index.php?url=ShowRoom&id=<?php echo $r['MaSP']?>">
+                <a href="index.php?url=ShowRoom&id=<?php echo $r['MaSP'] ?>">
                     <div class="slider-product-one-content-item-img">
                         <img class="phone-img" src="Image/<?php echo $r["Hinh"]; ?>">
                     </div>
                     <div class="slider-product-one-content-item-text">
                         <li><?php echo $r["TenSP"]; ?></li>
-                        <li><?php echo $r["GiaCu"]=number_format($r["GiaCu"],0); ?><sup>đ</sup></li>
-                        <li><?php echo $r["GiaMoi"]=number_format($r["GiaMoi"],0); ?><sup>đ</sup></li>
+                        <li><?php echo $r["GiaCu"] = number_format($r["GiaCu"], 0); ?><sup>đ</sup></li>
+                        <li><?php echo $r["GiaMoi"] = number_format($r["GiaMoi"], 0); ?><sup>đ</sup></li>
                         <li>
                             <p>Yêu thích:</p>
                             <div class="icon">
@@ -125,8 +123,8 @@
                 </a>
             </div>
             <?php
-                    }
-                    ?>
+            }
+            ?>
         </div>
     </div>
     </div>
