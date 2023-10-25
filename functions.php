@@ -138,24 +138,3 @@ function layThongTin_User($conn, $User)
     $sql = "SELECT * FROM account WHERE User='$User' ";
     return mysqli_query($conn, $sql);
 }
-function NhapComment($conn, $HoTen, $User, $Email, $Sdt, $Comment)
-{
-    $sql = "INSERT INTO comment (HoTen, User, Email, Sdt, Comment) VALUES ('$HoTen', '$User', '$Email', '$Sdt', '$Comment')";
-    return mysqli_query($conn, $sql);
-}
-function NhapCommentProduct($conn, $HoTen, $User, $MaSP, $NoiDung)
-{
-    $sql = "INSERT INTO comment_product (HoTen, User, MaSP, NoiDung) 
-            VALUES ('$HoTen', '$User', '$MaSP', '$NoiDung')";
-    return mysqli_query($conn, $sql);
-}
-function layComment_ID($conn, $ID)
-{
-    $sql = " SELECT * FROM comment_product WHERE MaSP='$ID' ORDER BY Date DESC";
-    return mysqli_query($conn, $sql);
-}
-function XoaID_Cmt($conn, $id)
-{
-    $sql = "DELETE FROM comment_product WHERE id='$id'";
-    return mysqli_query($conn, $sql);
-}

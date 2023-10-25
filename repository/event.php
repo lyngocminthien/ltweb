@@ -1,19 +1,52 @@
 <?php
-if (session_status() == PHP_SESSION_NONE)
-    session_start();
+session_start();
 
+function redirect($url)
+{
+    header("Location: $url");
+    exit();
+}
 
+// Xử lý đăng xuất
 if (isset($_POST['logout'])) {
     unset($_SESSION['User']);
-    if (isset($_GET["url"])) {
-        $p = $_GET["url"]; //pages/$p.".php"
-        $p = $_GET["url"]; //pages/$p.".php"
-        if ($p == "ShowRoom") {
-            $id = $_GET["id"]; // lấy biến id từ url
-            header("Location:index.php?url=" . $p . "&id=" . $id);
-        } else {
-            header("Location:index.php?url=" . $p);
+    // sau khi nhấn đăng xuất thì sẽ bay thẳng ra index.php
+    redirect("index.php");
+}
+
+// Kiểm tra đăng nhập
+if (isset($_POST['login'])) {
+    $taikhoan = $_POST['username'];
+    $matkhau = $_POST['password'];
+    $re = logIn($conn, $taikhoan, $matkhau);
+    if (mysqli_num_rows($re) > 0) {
+        $r = mysqli_fetch_array($re);
+        $_SESSION["User"] = $r["User"];
+        $_SESSION["LoaiTK"] = $r["LoaiTK"];
+
+        if ($r['LoaiTK'] == 0) {
+            $_SESSION['login'] = $taikhoan;
+            if (isset($_GET["url"])) {
+                $p = $_GET["url"];
+                // kiểm tra xem nếu đang ở trong ShowRoom.php thì đăng nhập vào sẽ vẫn ở trang đó mà không bị văng ra index.php
+                if ($p === "ShowRoom" && isset($_GET["id"])) {
+                    $id = $_GET["id"];
+                    redirect("index.php?url=$p&id=$id");
+                } else {
+                    redirect("index.php?url=$p");
+                }
+            } else {
+                redirect("index.php");
+            }
+        } else if ($r['LoaiTK'] == 1) {
+            $_SESSION['login'] = $taikhoan;
+            redirect("../AppleStore/admin.php");
         }
+    } else {
+        $errorMessage = "Tài khoản hoặc mật khẩu không hợp lệ. Vui lòng thử lại.";
+        echo "<script>
+            document.querySelector('.login').style.display = 'flex';
+        </script>";
     }
 }
 ?>
@@ -45,40 +78,12 @@ if (isset($_POST['logout'])) {
                             <input type="password" id="pass" name="password">
                         </div>
 
-
                         <?php
-                        if (isset($_POST['login'])) {
-                            $taikhoan = $_POST['username'];
-                            $matkhau = ($_POST['password']);
-                            $re = logIn($conn, $taikhoan, $matkhau);
-                            if (mysqli_num_rows($re) > 0) {
-                                $r = mysqli_fetch_array($re);
-                                $_SESSION["User"] = $r["User"];
-                                $_SESSION["LoaiTK"] = $r["LoaiTK"];
-                                if ($r['LoaiTK'] == 0) {
-                                    $_SESSION['login'] = $taikhoan;
-                                    if (isset($_GET["url"])) {
-                                        $p = $_GET["url"]; //pages/$p.".php"
-                                        if ($p == "ShowRoom") {
-                                            $id = $_GET["id"]; // lấy biến id từ url
-                                            header("Location:index.php?url=" . $p . "&id=" . $id);
-                                        } else {
-                                            header("Location:index.php?url=" . $p);
-                                        }
-                                    }
-                                } else if ($r['LoaiTK'] == 1) {
-                                    $_SESSION['login'] = $taikhoan;
-                                    header("Location:../NCStore/admin.php");
-                                }
-                            } else {
-                                echo "<div class='ThongBao'>Tài khoản hoặc mật khẩu không hợp lệ vui lòng thử lại :((</div>";
-                                echo '<script>
-                            document.querySelector(\'.login\').style.display = "flex";
-                            </script>';
-                            }
+                        if (isset($errorMessage)) {
+                            echo "<div class='ThongBao'>$errorMessage</div>";
                         }
-
                         ?>
+
                         <a href="index.php?url=SignUp">
                             <div>Bạn chưa có tài khoản?</div>
                         </a>
@@ -99,8 +104,6 @@ if (isset($_POST['logout'])) {
                     break;
                 }
             }
-
-
         ?>
             <li>
                 <form class="hello" method="POST">
@@ -110,7 +113,9 @@ if (isset($_POST['logout'])) {
                     <div>
                         <div class="child_event">
                             <ul>
-                                <li> <a href="index.php?url=ctdh">Đơn hàng của bạn</a></li>
+                                <li>
+                                    <a href="index.php?url=ctdh">Đơn hàng của bạn</a>
+                                </li>
                                 <li><input style="cursor: pointer;" type="submit" name="logout" value="Đăng xuất"></li>
                             </ul>
                         </div>
@@ -132,7 +137,5 @@ if (isset($_POST['logout'])) {
     });</script>';
         }
         ?>
-
-
     </ul>
 </div>
