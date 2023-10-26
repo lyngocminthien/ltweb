@@ -14,30 +14,9 @@ function laySP($conn, $idLoai)
     $sql = "select * from sanpham where Maloai = " . $idLoai;
     return mysqli_query($conn, $sql);
 }
-function laySPTuongTu($conn, $idLoai, $id)
-{
-    $sql = "SELECT * FROM sanpham WHERE Maloai = " . $idLoai . " AND MaSP != " . $id . " LIMIT 5 ";
-    return mysqli_query($conn, $sql);
-}
-function laySPNoiBat($conn)
-{
-    $sql = "SELECT * FROM sanpham WHERE noibat = 1";
-    return mysqli_query($conn, $sql);
-}
-
-function laySale($conn, $n)
-{
-    $sql = "select *, round(((GiaCu - GiaMoi) / GiaCu) * 100,1)as GiamGia from sanpham order by GiamGia desc limit " . $n;
-    return mysqli_query($conn, $sql);
-}
-function lay2SP($conn, $idLoai1, $idLoai2)
-{
-    $sql = "select * from sanpham where Maloai = " . $idLoai1 . " or Maloai = " . $idLoai2 . " order by NoiBat desc";
-    return mysqli_query($conn, $sql);
-}
 function layChiTietSanPham($conn, $MaSP)
 {
-    $layChiTietSanPham = "SELECT * FROM sanpham WHERE sanpham.MaSP = $MaSP";
+    $layChiTietSanPham = "SELECT * FROM sanpham WHERE MaSP = $MaSP";
     return mysqli_query($conn, $layChiTietSanPham);
 }
 function timkiemSP($conn, $search)

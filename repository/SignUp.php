@@ -1,42 +1,41 @@
-
 <div class="container">
-<h3 class="sign-up-now">Đăng Ký Tài Khoản Ngay</h3>
+    <h3 class="sign-up-now">Đăng Ký Tài Khoản Ngay</h3>
 
-  <form class="sign-up-form" method="POST">
+    <form class="sign-up-form" method="POST">
 
-      <div class="name-acc">
-        <label for="hoten"><i class="fa-solid fa-person"></i></label>
-        <input type="text" id="hoten" name="HoTen" placeholder="Họ và tên">
-      </div>
+        <div class="name-acc">
+            <label for="hoten"><i class="fa-solid fa-person"></i></label>
+            <input type="text" id="hoten" name="HoTen" placeholder="Họ và tên">
+        </div>
 
-      <div class="user-acc">
-        <label for="user"><i class="fa-solid fa-user"></i></label>
-        <input type="text" id="user" name="User" placeholder="Tài khoản">
-      </div>
+        <div class="user-acc">
+            <label for="user"><i class="fa-solid fa-user"></i></label>
+            <input type="text" id="user" name="User" placeholder="Tài khoản">
+        </div>
 
-      <div class="password-acc">
-        <label for="pass"><i class="fa-solid fa-lock"></i></label>
-        <input type="password" id="pass" name="Pass" placeholder="Password">
-      </div>
+        <div class="password-acc">
+            <label for="pass"><i class="fa-solid fa-lock"></i></label>
+            <input type="password" id="pass" name="Pass" placeholder="Password">
+        </div>
 
-      <div class="email-user">
-        <label for="email"><i class="fa-solid fa-envelope"></i></label>
-        <input type="email" name="Email" id="email" placeholder="Nhập email">
-      </div>
+        <div class="email-user">
+            <label for="email"><i class="fa-solid fa-envelope"></i></label>
+            <input type="email" name="Email" id="email" placeholder="Nhập email">
+        </div>
 
-    <div class="phone">
-      <label for="sdt"><i class="fa-solid fa-phone"></i></label>
-      <input type="tel" name="Sdt" id="sdt" placeholder="Nhập số điện thoại">
-    </div>
-     
-    <div class="address">
-      <label for="DiaChi"><i class="fa-solid fa-location-dot"></i></label>
-      <input id="Dc" name="DiaChi" placeholder="Nhập địa chỉ của bạn"></input>
-    </div>
-    
-    <div class="body-thong-bao">
-      
-<?php
+        <div class="phone">
+            <label for="sdt"><i class="fa-solid fa-phone"></i></label>
+            <input type="tel" name="Sdt" id="sdt" placeholder="Nhập số điện thoại">
+        </div>
+
+        <div class="address">
+            <label for="DiaChi"><i class="fa-solid fa-location-dot"></i></label>
+            <input id="Dc" name="DiaChi" placeholder="Nhập địa chỉ của bạn"></input>
+        </div>
+
+        <div class="body-thong-bao">
+
+            <?php
 if (isset($_POST['DangKy'])) {
     $Ht = $_POST['HoTen'];
     $Us = trim($_POST['User']);
@@ -65,10 +64,10 @@ if (isset($_POST['DangKy'])) {
         }
 }
 ?>
-    </div>
-        
-    <input type="submit" id="sub" name="DangKy" value="Đăng ký">
+        </div>
 
-</form>
+        <input type="submit" id="sub" name="DangKy" value="Đăng ký">
+
+    </form>
 
 </div>
