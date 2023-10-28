@@ -4,6 +4,11 @@ function layLoai($conn)
     $sql = "select * from loai order by thuTu";
     return mysqli_query($conn, $sql);
 }
+function layLoaiID($conn, $id)
+{
+    $sql = "select * from loai where MaLoai = '$id' order by thuTu";
+    return mysqli_query($conn, $sql);
+}
 function laySanPham($conn, $n)
 {
     $sql = "select * from sanpham order by MaSP limit " . $n;
@@ -11,7 +16,7 @@ function laySanPham($conn, $n)
 }
 function laySP($conn, $idLoai)
 {
-    $sql = "select * from sanpham where Maloai = " . $idLoai;
+    $sql = "select * from sanpham where Maloai = '$idLoai'";
     return mysqli_query($conn, $sql);
 }
 function layChiTietSanPham($conn, $MaSP)

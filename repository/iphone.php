@@ -1,11 +1,29 @@
-<main class="wrapper-product">
+<main class="wrapper-product grid wide">
     <h2 class="heading-product">iPhone nào phù hợp với bạn?</h2>
-    <?php
-    $result = laySP($conn, 1);
-    while ($row = mysqli_fetch_array($result)) {
-    ?>
+    <section class="container-product">
+        <?php
+        $result = laySP($conn, 1);
+        while ($row = $result->fetch_assoc()) {
+        ?>
 
-    <?php
-    }
-    ?>
+            <div class="product-item">
+                <!-- img -->
+                <div class="product-item_img">
+                    <a href="" class="product-item-link">
+                        <img src="assets/images/iphone/<?php echo $row['Hinh']; ?>" alt="iphone">
+                    </a>
+                </div>
+
+                <!-- info -->
+                <div class="product-item-info">
+                    <h2 class="product-name"><?php echo $row['TenSP'] ?></h2>
+                    <p class="product-descripsion"><?php echo $row['MoTa'] ?></p>
+                    <p class="product-price">Từ <?php echo number_format($row["Gia"], 0, ',', '.'); ?>đ</p>
+                    <a href="" class="product-buy">Mua</a>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+    </section>
 </main>

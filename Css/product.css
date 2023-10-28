@@ -1,13 +1,77 @@
 .wrapper-product {
   padding-top: 61px;
 }
+
 .heading-product {
   color: #1d1d1f;
   font-size: 46px;
-  text-align: center;
-  line-height: 1.09;
-  font-weight: 600;
-  letter-spacing: -0.01em;
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
     sans-serif;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.container-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  margin-top: 68px;
+}
+
+.product-item {
+  text-align: center;
+  margin: 0 25px;
+}
+
+.product-item_img {
+  height: 300px;
+  transition: all 0.2s linear;
+}
+
+.product-item_img:hover {
+  transform: translateY(-10%);
+}
+
+.product-item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-name {
+  color: #313131;
+}
+
+.product-descripsion {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-text-product);
+}
+
+.product-name,
+.product-descripsion {
+  height: 50px;
+}
+
+.product-price {
+  font-size: 15.5px;
+  font-weight: 300;
+  letter-spacing: -0.11px;
+}
+
+.product-buy {
+  color: #fff;
+  font-size: 12px;
+  background-color: #0071e3;
+  padding: 3px 10px;
+  border: 1px solid transparent;
+  margin-top: 15px;
+  border-radius: 980px;
+  letter-spacing: 0.3px;
+}
+.product-buy:hover {
+  background-color: #2a84df;
 }

@@ -1,0 +1,44 @@
+:root {
+  --primary-color: #aacef3;
+  --color-text-product: #1d1d1f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+/* grid wide để chia theo dạng layout grid 1200px */
+.grid {
+  width: 100%;
+  display: block;
+  padding: 0;
+}
+
+.grid.wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  display: inline-block;
+  background-color: initial;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}

@@ -31,6 +31,10 @@
 
             <div class="nav-bottom">
                 <ul class="nav-list">
+                    <?php
+                    $result = layLoai($conn);
+                    $row = $result->fetch_assoc();
+                    ?>
                     <li class="nav-item">
                         <img src="assets/Images/Icon/iphone-icon.svg" alt="iphone-icon">
                         <a href="index.php?page=iphone.php" class="nav-item-link">IPhone</a>

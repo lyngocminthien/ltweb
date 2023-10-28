@@ -16,11 +16,9 @@ require "conn.php";
 
     <!-- Link fonts && icon -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" 0 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Link general link -->
-    <link rel="stylesheet" href="css/css_base/base.css">
-    <link rel="stylesheet" href="css/css_base/grid.css">
+    <link rel="stylesheet" href="css/base.css">
 
     <!-- css header && footer -->
     <link rel="stylesheet" href="css/header.css">
@@ -39,7 +37,7 @@ require "conn.php";
     <!-- ------------------------ Apple Store ------------------------------- -->
     <main class="wrapper">
         <!-- ------------------------ Header ------------------------------- -->
-        <header class="header-main grid wide">
+        <header style="border-bottom: 1px solid #3333;" class="header-main grid wide">
             <?php
             require "pages/header.php";
             ?>
