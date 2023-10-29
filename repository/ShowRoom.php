@@ -6,7 +6,7 @@ $rsp = mysqli_fetch_array($chitietsanpham);
 ?>
 
 <body>
-    <div class="container">
+    <div class="container-showroom">
         <form action="index.php?page=cart.php" method="post">
             <div class="Ten"><?php echo $rsp['TenSP'] ?></div>
             <div class="info">

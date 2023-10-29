@@ -1,0 +1,145 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 1;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-container {
+  background-color: #fff;
+  width: 900px;
+  min-height: 300px;
+  max-width: calc(100% - 32px);
+  position: relative;
+  border-radius: 10px;
+  /* chuyển động từ trên xuống của modal */
+  animation: modalFaceIn ease 0.35s;
+}
+
+/* Modal-header */
+.modal-header {
+  height: 129px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-header-content {
+  font-size: 32px;
+  color: #000;
+}
+
+.modal-header-content img {
+  width: 30px;
+}
+
+.close-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 4px;
+}
+
+.modal-close {
+  width: 50px;
+}
+
+.modal-close img {
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-close img:hover {
+  transform: scale(1.2);
+}
+
+/* Modal body */
+#update_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#update_form > * {
+  margin: 14px;
+}
+
+#update_form label,
+#update_form .account input,
+#update_form .password input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+#update_form label {
+  font-size: 20px;
+  width: 120px;
+}
+
+#update_form .account input,
+#update_form .password input {
+  background-color: #f5f5f7;
+  padding: 15px 13px;
+  border-radius: 20px;
+  transition: 300ms ease-in-out;
+}
+
+#update_form input:focus {
+  background-color: white;
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+}
+
+#update_form .sign-up {
+  font-size: 18px;
+  color: var(--color-text-product);
+  transition: all 0.1s linear;
+}
+
+#update_form .sign-up:hover {
+  color: rgb(252, 112, 112);
+}
+
+.signup_submit input {
+  width: 200px;
+  height: 70px;
+  background-color: var(--primary-color);
+  color: #000;
+  font-size: 18px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.signup_submit input:hover {
+  transform: scale(1.1);
+}
+
+/* animation xuất hiện từ trên xuống của modal */
+@keyframes modalFaceIn {
+  from {
+    transform: translateY(-250px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

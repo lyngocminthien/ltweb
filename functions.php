@@ -31,7 +31,7 @@ function timkiemSP($conn, $search)
 }
 function logIn($conn, $taikhoan, $matkhau)
 {
-    $sql = "SELECT * FROM account WHERE (user = '{$taikhoan}' OR email = '{$taikhoan}' OR sdt = '{$taikhoan}') AND pass = '{$matkhau}' LIMIT 1";
+    $sql = "SELECT * FROM account WHERE user = '$taikhoan' AND pass = '{$matkhau}' LIMIT 1";
     return mysqli_query($conn, $sql);
 }
 function SignUp($conn, $user, $pass, $hoTen, $email, $sdt, $diaChi)
