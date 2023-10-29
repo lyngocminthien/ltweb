@@ -8,8 +8,8 @@
 
             <div class="product-item">
                 <div class="product-item_img">
-                    <a href="" class="product-item-link">
-                        <img src="assets/images/iwatch/<?php echo $row['Hinh']; ?>" alt="iwatch">
+                    <a href="index.php?page=showroom.php&MaSP=<?php echo $row['MaSP'] ?>" class="product-item-link">
+                        <img src="assets/images/<?php echo $row['Hinh']; ?>" alt="iwatch">
                     </a>
                 </div>
                 <div class="product-item-info">

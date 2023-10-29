@@ -7,17 +7,17 @@
                 </a>
 
                 <div class="nav-top_search">
-                    <form action="" method="GET">
+                    <form action="index.php" method="GET">
+                        <input type="hidden" name="page" value="search.php">
                         <div class="search">
-                            <input type="text" name="input-search" id="input-search"
-                                placeholder="Tìm kiếm trên applestore.com">
-                            <button type="submit" name="submit-search">
+                            <input type="text" name="input-search" id="input-search" placeholder="Tìm kiếm trên applestore.com">
+                            <button type="submit">
                                 <img src="assets/Images/Icon/search-icon.svg" alt="search-icon">
                             </button>
                         </div>
                     </form>
 
-                    <a href="" class="cart">
+                    <a href="index.php?page=cart.php" class="cart">
                         <img src="assets/Images/Icon/cart-icon.svg" alt="cart-icon">
                         <span>Giỏ hàng</span>
                     </a>
@@ -63,7 +63,3 @@
         </section>
     </nav>
 </header>
-
-<?php
-require "repository/search.php";
-?>

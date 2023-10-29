@@ -37,11 +37,10 @@ require "conn.php";
     <!-- ------------------------ Apple Store ------------------------------- -->
     <main class="wrapper">
         <!-- ------------------------ Header ------------------------------- -->
-        <header style="border-bottom: 1px solid #3333;" class="header-main grid wide">
-            <?php
-            require "pages/header.php";
-            ?>
-        </header>
+
+        <?php
+        require "pages/header.php";
+        ?>
 
         <!-- ------------------------ Body ------------------------------- -->
         <section class="main_apple-store">
