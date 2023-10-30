@@ -1,3 +1,8 @@
+<?php
+if (session_status() == PHP_SESSION_NONE)
+    session_start();
+?>
+
 <header class="header">
     <nav class="navigation">
         <section class="nav-content">
@@ -10,7 +15,7 @@
                     <form action="index.php" method="GET">
                         <input type="hidden" name="page" value="search.php">
                         <div class="search">
-                            <input type="text" name="input-search" id="input-search" placeholder="Tìm kiếm trên applestore.com">
+                            <input type="text" name="input-search" id="input-search" placeholder="Tìm kiếm trên applestore.com" required>
                             <button type="submit">
                                 <img src="assets/Images/Icon/search-icon.svg" alt="search-icon">
                             </button>
@@ -63,3 +68,7 @@
         </section>
     </nav>
 </header>
+
+<?php
+require "repository/signin.php"
+?>

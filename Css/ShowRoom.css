@@ -31,7 +31,7 @@
 .Gia {
   font-size: 32px;
   margin-bottom: 12px;
-  color: var(--color-text-product);
+  color: var(--notification);
   opacity: 0.9;
 }
 
@@ -49,7 +49,7 @@
   flex-direction: column;
 }
 .Mota li {
-  color: #495057;
+  color: var(--color-text-product);
   margin-bottom: 10px;
   line-height: 1.5;
   letter-spacing: 0.2px;
@@ -57,18 +57,29 @@
 
 .buy-product {
   display: flex;
-  margin: 50px;
   justify-content: center;
+  margin-top: 50px;
 }
 .buy-product button#addtocard {
-  width: 700px;
-  height: 60px;
-  background-color: var(--primary-color);
+  width: 50%;
+  background-color: var(--notification);
+  padding: 20px;
   border-radius: 15px;
-  color: #000;
+  color: #fff;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.buy-product #addtocard:hover {
+  background-color: var(--primary-color);
+  color: var(--color-text-product);
+  transform: scale(1.1);
+}
+#addtocard div {
+  padding-bottom: 7px;
 }
 .buy-product button strong {
   font-size: 20px;
-  margin-bottom: 10px;
+}
+#addtocard p {
+  font-size: 15px;
 }

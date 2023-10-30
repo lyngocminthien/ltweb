@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require "functions.php";
 require "conn.php";
 ?>
@@ -65,49 +63,6 @@ require "conn.php";
             require "pages/footer.php";
             ?>
         </footer>
-
-        <!-- ------------------------ Modal ------------------------------- -->
-        <div class="modal js-modal">
-            <div class="modal-container js-modal-container">
-                <!-- header -->
-                <header class="modal-header">
-                    <div class="modal-header-content">
-                        Đăng nhập vào Apple Store
-                        <img src="assets/images/icon/apple-white.svg" alt="logo-form">
-                    </div>
-                    <!-- icon close -->
-                    <div class="close-container">
-                        <div class="modal-close js-modal-close">
-                            <img src="assets/images/icon/close-icon.svg" alt="close-modal">
-                        </div>
-                    </div>
-                </header>
-
-                <div class="modal-body">
-                    <form action="index.php" method="post">
-                        <div id="update_form">
-                            <div class="account">
-                                <label for="account_apple">Account:</label>
-                                <input type="text" id="account_apple" name="account_apple" placeholder="applestore.com">
-                            </div>
-
-                            <div class="password">
-                                <label for="name_apple">Password:</label>
-                                <input type="password" id="name_apple" name="name_apple" placeholder="applestore.com">
-                            </div>
-
-                            <a href="index.php?page=signup.php" class="sign-up">Bạn chưa có tài khoản?</a>
-
-                            <div class="signup_submit">
-                                <input type="submit" name="add_submit" value="Đăng nhập">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <script src="js/modal.js"></script>
     </main>
 </body>
 

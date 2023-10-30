@@ -1,6 +1,7 @@
 :root {
   --primary-color: #aacef3;
-  --color-text-product: #1d1d1f;
+  --color-text-product: #3a3a3d;
+  --notification: #f87e6e;
 }
 
 * {

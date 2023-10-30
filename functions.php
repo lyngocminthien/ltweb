@@ -50,9 +50,9 @@ function UpdataGio($conn, $SoLuong, $MaSP)
     $sql = "UPDATE giohang SET SoLuong='$SoLuong' WHERE MaSP='$MaSP'";
     return mysqli_query($conn, $sql);
 }
-function NhapGio($conn, $TenSP, $MaSP, $GiaCu, $GiaMoi, $Hinh, $SoLuong)
+function NhapGio($conn, $TenSP, $MaSP, $Gia, $Hinh, $SoLuong)
 {
-    $sql = "INSERT INTO giohang(TenSP,MaSP,GiaCu,GiaMoi,Hinh,SoLuong) values ('$TenSP','$MaSP','$GiaCu','$GiaMoi','$Hinh','$SoLuong')";
+    $sql = "INSERT INTO giohang(TenSP,MaSP,Gia,Hinh,SoLuong) values ('$TenSP','$MaSP','$Gia','$Hinh','$SoLuong')";
     return mysqli_query($conn, $sql);
 }
 function XoaGio($conn)
