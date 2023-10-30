@@ -75,6 +75,7 @@
   margin: 20px;
 }
 .btn-cart {
+  width: 200px;
   background-color: var(--background-color);
   border: none;
   margin: 0 10px;

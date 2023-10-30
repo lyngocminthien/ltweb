@@ -14,55 +14,58 @@ if (isset($_SESSION['User'])) {
     $re_layDonHang = layDonHang_User($conn, $User);
     if (mysqli_num_rows($re_layDonHang) != 0) {
 ?>
-<div class="container grid wide">
-    <h3 class="heading-dh">Chào <?php echo $r['HoTen']; ?> đây là đơn hàng của bạn</h3>
-    <form method="post" action="index.php?page=ctdh.php">
-        <table class="dh-table" border="1">
-            <thead>
-                <tr class="head-list-info">
-                    <th class="head-item-info">
-                        <span>Mã đơn</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Người đặt đơn</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Tổng số lượng sản phẩm</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Tổng Giá</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Ngày tạo đơn</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Trạng thái</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Hành động</span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="body-info-product">
-                <?php
+        <div class="container grid wide">
+            <h3 class="heading-dh">Đơn hàng của <?php echo $r['HoTen']; ?></h3>
+            <form method="post" action="index.php?page=ctdh">
+                <table class="dh-table" border="1">
+                    <thead>
+                        <tr class="head-list-info">
+                            <th class="head-item-info">
+                                <span>Mã đơn</span>
+                            </th>
+                            <th class="head-item-info">
+                                <span>Người đặt đơn</span>
+                            </th>
+                            <th class="head-item-info">
+                                <span>Tổng số lượng sản phẩm</span>
+                            </th>
+                            <th class="head-item-info">
+                                <span>Tổng Giá</span>
+                            </th>
+                            <th class="head-item-info">
+                                <span>Ngày tạo đơn</span>
+                            </th>
+                            <th class="head-item-info">
+                                <span>Trạng thái</span>
+                            </th>
+                            <th class="head-item-info">
+                                <span>Hành động</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="body-info-product">
+                        <?php
                         $re = layDonHang_User($conn, $User);
                         while ($r = mysqli_fetch_array($re)) {
                         ?>
-                <tr class="body-list-info">
-                    <td><?php echo $r['MaDH'] ?></td>
-                    <td><?php echo $r['User'] ?></td>
-                    <td><?php echo $r['TongSoLuong'] ?></td>
-                    <td><?php echo $r['TongHD'] = number_format($r["TongHD"], 0); ?><sup>đ</sup></td>
-                    <td><?php echo $r['NgayTao'] ?></td>
-                    <td><?php echo $r['TinhTrang'] ?></td>
-                    <td><button class="btn-cthd" type="submit" id name='XemChiTiet' value="<?php echo $r['MaDH'] ?>">Xem
-                            chi tiết</button></td>
-                    <?php
+                            <tr class="body-list-info">
+                                <td><?php echo $r['MaDH'] ?></td>
+                                <td><?php echo $r['User'] ?></td>
+                                <td><?php echo $r['TongSoLuong'] ?></td>
+                                <td><?php echo $r['TongHD'] = number_format($r["TongHD"], 0); ?><sup>đ</sup></td>
+                                <td><?php echo $r['NgayTao'] ?></td>
+                                <td><?php echo $r['TinhTrang'] ?></td>
+                                <td>
+                                    <button class="btn-cthd" type="submit" id name='XemChiTiet' value="<?php echo $r['MaDH'] ?>">
+                                        <img src="assets/images/icon/see-icon.svg" alt="information_seeing">
+                                    </button>
+                                </td>
+                            <?php
                         }
                             ?>
-            </tbody>
-        </table>
-        <?php
+                    </tbody>
+                </table>
+                <?php
                 if (isset($_POST['XemChiTiet'])) {
 
                     $MaDH = $_POST['XemChiTiet'];
@@ -84,69 +87,67 @@ if (isset($_SESSION['User'])) {
                         echo 'Đang chờ hủy đơn...';
                     }
                 ?>
-        <table class="dh-table" border="1">
-            <thead>
-                <tr class="head-list-info">
-                    <th class="head-item-info">
-                        <span>Mã sản phẩm</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Tên sản phẩm</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Số lượng</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Hình</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Ngày đặt đơn</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Tổng giá sản phẩm</span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="body-info-product">
-                <?php
+                    <table class="dh-table" border="1">
+                        <thead>
+                            <tr class="head-list-info">
+                                <th class="head-item-info">
+                                    <span>Mã sản phẩm</span>
+                                </th>
+                                <th class="head-item-info">
+                                    <span>Tên sản phẩm</span>
+                                </th>
+                                <th class="head-item-info">
+                                    <span>Số lượng</span>
+                                </th>
+                                <th class="head-item-info">
+                                    <span>Hình</span>
+                                </th>
+                                <th class="head-item-info">
+                                    <span>Ngày đặt đơn</span>
+                                </th>
+                                <th class="head-item-info">
+                                    <span>Tổng giá sản phẩm</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="body-info-product">
+                            <?php
                             $re = layCTDH_MaDH($conn, $MaDH);
                             while ($r = mysqli_fetch_array($re)) {
                             ?>
-                <tr class="body-list-info">
-                    <td><?php echo $r['MaSP'] ?></td>
-                    <td class="body-item-name-product"><?php echo $r['TenSP'] ?></td>
-                    <td><?php echo $r['SoLuong'] ?></td>
-                    <td class="body-item-img"><img class="product-img" src='assets/images/<?php echo $r['Hinh'] ?>'>
-                    </td>
-                    <td><?php echo $r['NgayDatDon'] ?></td>
-                    <td><?php echo $r['Gia'] = number_format($r["Gia"], 0); ?><sup>đ</sup></td>
-                </tr>
-                <?php
+                                <tr class="body-list-info">
+                                    <td><?php echo $r['MaSP'] ?></td>
+                                    <td class="body-item-name-product"><?php echo $r['TenSP'] ?></td>
+                                    <td><?php echo $r['SoLuong'] ?></td>
+                                    <td class="body-item-img"><img class="product-img" src='assets/images/<?php echo $r['Hinh'] ?>'>
+                                    </td>
+                                    <td><?php echo $r['NgayDatDon'] ?></td>
+                                    <td><?php echo $r['Gia'] = number_format($r["Gia"], 0); ?><sup>đ</sup></td>
+                                </tr>
+                            <?php
                             }
                             $MaDH = $_POST['XemChiTiet'];
                             $re = layDonHang_MaDH($conn, $MaDH);
                             $r = mysqli_fetch_array($re);
                             if ($r['TinhTrang'] == "Đang xử lý") {
                             ?>
-                <div class="body-list-info">
-                    <button class="btn-cart" type="submit" id="btnHuyDon" name='HuyDon'
-                        value="<?php echo $r['MaDH'] ?>">Hủy đơn hàng</button>
-                    <button class="btn-cart-errol" type="button" id="btnDatLai" disabled>Đặt lại</button>
-                </div>
+                                <div class="body-list-info">
+                                    <button class="btn-cart" type="submit" id="btnHuyDon" name='HuyDon' value="<?php echo $r['MaDH'] ?>">Hủy đơn hàng</button>
+                                    <button class="btn-cart-errol" type="button" id="btnDatLai" disabled>Đặt lại</button>
+                                </div>
 
-                <?php } else { ?>
-                <div class="body-list-info">
-                    <button class="btn-cart-errol" type="button" id="btnHuyDon" disabled>Hủy đơn hàng</button>
-                    <button class="btn-cart" type="submit" id="btnDatLai" name='DatLai'
-                        value="<?php echo $r['MaDH'] ?>">Đặt lại</button>
-                </div>
-                <?php }
+                            <?php } else { ?>
+                                <div class="body-list-info">
+                                    <button class="btn-cart-errol" type="button" id="btnHuyDon" disabled>Hủy đơn hàng</button>
+                                    <button class="btn-cart" type="submit" id="btnDatLai" name='DatLai' value="<?php echo $r['MaDH'] ?>">Đặt lại</button>
+                                </div>
+                            <?php }
 
 
                             ?>
-            </tbody>
-        </table>
-        <?php
+                        </tbody>
+                    </table>
+                <?php
                 }
 
                 if (isset($_POST['HuyDon'])) {
@@ -167,23 +168,23 @@ if (isset($_SESSION['User'])) {
                 // echo '<script> document.getElementById(\'btnDatDon\').style.display = \'none\';</script>';  
 
                 ?>
-        </from>
+                </from>
 
-        <?php
+            <?php
         } else {
             echo "<div class='container'><h3 class='heading-cart'>Bạn không có đơn hàng<h3></div>";
         }
     } else {
 
             ?>
-        <div class='container'>
-            <h3 class='heading-cart'>Bạn cần phải đăng nhập.<h3>
-        </div>
-        <div class="body-list-info">
-            <div class="option-cart">
-                <button class="btn-cart"><a href="index.php">Về trang chủ</a></button>
+            <div class='container'>
+                <h3 class='heading-cart'>Bạn cần phải đăng nhập.<h3>
             </div>
-        </div>
-</div><?php
+            <div class="body-list-info">
+                <div class="option-cart">
+                    <button class="btn-cart"><a href="index.php">Về trang chủ</a></button>
+                </div>
+            </div>
+        </div><?php
             }
                 ?>

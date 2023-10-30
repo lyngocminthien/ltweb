@@ -1,6 +1,6 @@
 .dh-table {
   width: 100%;
-  margin-bottom: 14px;
+  margin: 20px 0;
   border-collapse: collapse;
 }
 
@@ -15,7 +15,7 @@
   color: #504e4e;
   font-size: 32px;
   text-align: center;
-  margin: 14px 0 16px;
+  margin: 25px 0;
 }
 
 /* head đơn đặt hàng */
@@ -37,24 +37,27 @@
   border: none;
   font-size: 18px;
   cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.btn-cthd img {
+  width: 40px;
 }
 
 .body-list-info .btn-cthd:hover {
-  color: #fb5b08;
+  transform: scale(1.1);
 }
 
 /* table xem chi tiết đơn đặt hàng */
 .btn-cart-errol {
   width: 160px;
-  height: 40px;
   background-color: #afadac;
   color: #e2e1e1;
   border: none;
+  padding: 15px 25px;
   margin: 0 10px;
-  font-size: 16px;
-  cursor: none;
-}
-.btn-cart-errol:hover {
+  font-size: 17px;
+  border-radius: 50px;
   cursor: initial;
 }
 
