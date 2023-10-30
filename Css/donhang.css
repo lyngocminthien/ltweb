@@ -59,8 +59,8 @@
 }
 
 .body-thong-bao {
-  font-weight: bold;
-  color: var(--notification);
+  font-weight: 600;
+  color: var(--color-text-product);
   font-size: 20px;
-  margin: 23px 0;
+  margin: 30px 0 25px;
 }

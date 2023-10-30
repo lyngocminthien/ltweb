@@ -11,10 +11,8 @@
 }
 .Ten {
   font-size: 38px;
-  color: #212529;
+  color: var(--color-text-product);
   font-weight: bold;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #dee2e6;
   margin: 16px 0;
   line-height: 1.5;
 }
@@ -30,6 +28,7 @@
 }
 .Gia {
   font-size: 32px;
+  font-weight: 600;
   margin-bottom: 12px;
   color: var(--notification);
   opacity: 0.9;
@@ -65,13 +64,12 @@
   background-color: var(--notification);
   padding: 20px;
   border-radius: 15px;
-  color: #fff;
+  color: var(--color-text-product);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 .buy-product #addtocard:hover {
   background-color: var(--primary-color);
-  color: var(--color-text-product);
   transform: scale(1.1);
 }
 #addtocard div {

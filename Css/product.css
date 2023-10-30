@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   gap: 34px;
-  margin-top: 68px;
+  margin-top: 68px !important;
 }
 
 .product-item {

@@ -28,7 +28,7 @@
         </div>
 
         <div class="address">
-            <label for="DiaChi">Địa chỉ:</label>
+            <label for="Dc">Địa chỉ:</label>
             <input id="Dc" name="DiaChi" placeholder="Nhập địa chỉ của bạn"></input>
         </div>
 

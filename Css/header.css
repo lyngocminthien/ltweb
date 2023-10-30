@@ -2,115 +2,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 12px;
-}
-
-.nav-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/*-------------------- Nav-top --------------------- */
-.nav-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 11px;
-}
-
-.nav-top img {
-  width: 33px;
-  cursor: pointer;
+  height: 120px;
 }
 
 .heading-logo-link {
-  margin-right: 15px;
   transition: all 0.2s ease-in-out;
-  margin-right: 27px;
+}
+
+.heading-logo-link img {
+  width: 53px !important;
 }
 
 .heading-logo-link:hover {
-  transform: scale(1.4);
-}
-
-.nav-top_search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-top_search .search {
-  display: flex;
-  align-items: center;
-}
-
-.search input {
-  width: 450px;
-  background-color: #f5f5f7;
-  font-size: 18px;
-  padding: 15px 13px;
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  transition: 300ms ease-in-out;
-}
-
-.search img {
-  margin-left: 27px;
-  transition: all 0.2s ease-in-out;
-}
-
-.search img:hover {
-  cursor: pointer;
-  transform: translateX(-5px);
-}
-
-.nav-top_search input:focus {
-  background-color: white;
-  transform: scale(1.05);
-  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
-}
-
-.cart,
-.btnAccount {
-  color: #000;
-  background-color: #aacef3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 10px;
-  margin-left: 27px;
-  border-radius: 15px;
-  transition: all 0.2s ease-in-out;
-}
-
-.cart:hover,
-.btnAccount:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.cart span,
-.btnAccount span {
-  padding-left: 5px;
-  font-weight: 600;
-}
-
-.btnAccount span {
-  font-size: 16px;
-}
-
-/*-------------------- Nav-bottom --------------------- */
-.nav-bottom {
-  height: 50px;
+  transform: scale(1.2);
 }
 
 .nav-list {
   height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
 .nav-item {
@@ -119,20 +30,21 @@
   align-items: center;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border-radius: 10px;
-  padding: 5px 6px;
+  padding: 0 10px;
+  margin: 0 20px;
 }
 
-.nav-item:hover {
+.nav-item:not(:first-child):hover {
   box-shadow: inset 100px 0 0 0 #aacef3;
   cursor: pointer;
 }
 
 .nav-item img {
-  width: 15px;
+  width: 16px;
 }
 
 .nav-item-link {
-  font-size: 15px;
-  padding-left: 5px;
+  font-size: 16px;
+  padding: 10px 0 10px 5px;
   color: #000;
 }

@@ -8,7 +8,7 @@
 
         <div class="product-item">
             <div class="product-item_img">
-                <a href="index.php?page=showroom.php&MaSP=<?php echo $row['MaSP'] ?>" class="product-item-link">
+                <a href="index.php?page=showroom&MaSP=<?php echo $row['MaSP'] ?>" class="product-item-link">
                     <img src="assets/images/<?php echo $row['Hinh']; ?>" alt="airpod">
                 </a>
             </div>
@@ -16,7 +16,7 @@
                 <h2 class="product-name"><?php echo $row['TenSP'] ?></h2>
                 <p class="product-descripsion"><?php echo $row['MoTa'] ?></p>
                 <p class="product-price">Từ <?php echo number_format($row["Gia"], 0, ',', '.'); ?>đ</p>
-                <a href="index.php?page=showroom.php&MaSP=<?php echo $row['MaSP'] ?>" class="product-buy">Mua</a>
+                <a href="index.php?page=showroom&MaSP=<?php echo $row['MaSP'] ?>" class="product-buy">Mua</a>
             </div>
         </div>
         <?php

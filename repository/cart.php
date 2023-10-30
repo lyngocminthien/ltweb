@@ -54,43 +54,47 @@ if (isset($_POST['addtocard'])) {
         $re_ctdh = NhapChiTietDon($conn, $MaDH, $MaSP, $SoLuong, $TenSP, $Hinh, $Gia);
     }
 } elseif (!isset($_SESSION['User'])) {
-    echo '<script>document.querySelector(\'.login\').style.display ="flex";</script>';
+    echo '<script>document.querySelector(\'.js-modal\').style.display ="flex";
+    const close1 = document.querySelector(\'.js-modal-close\');
+        close1.addEventListener("click", function(){
+            document.querySelector(\'.js-modal\').style.display ="none";
+        });</script>';
 }
 $re_lay_giohang = layHetGioHang($conn);
 if (mysqli_num_rows($re_lay_giohang) != 0) {
 ?>
 
-<div class="container grid wide">
-    <h3 class="heading-cart">Giỏ Hàng của bạn gồm</h3>
-    <form method="POST" action="index.php?page=cart.php">
-        <table class="cart-table" border="1">
-            <thead>
-                <tr class="head-list-info">
-                    <th class="head-item-info">
-                        <span>Thứ tự</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Tên sản phẩm</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Hình</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Giá</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Số lượng</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Thành tiền</span>
-                    </th>
-                    <th class="head-item-info">
-                        <span>Hành động</span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="body-info-product">
-                <?php
+    <div class="container grid wide">
+        <h3 class="heading-cart">Giỏ hàng của bạn</h3>
+        <form method="POST" action="index.php?page=cart">
+            <table class="cart-table" border="1">
+                <thead>
+                    <tr class="head-list-info">
+                        <th class="head-item-info">
+                            <span>Thứ tự</span>
+                        </th>
+                        <th class="head-item-info">
+                            <span>Tên sản phẩm</span>
+                        </th>
+                        <th class="head-item-info">
+                            <span>Hình</span>
+                        </th>
+                        <th class="head-item-info">
+                            <span>Giá</span>
+                        </th>
+                        <th class="head-item-info">
+                            <span>Số lượng</span>
+                        </th>
+                        <th class="head-item-info">
+                            <span>Thành tiền</span>
+                        </th>
+                        <th class="head-item-info">
+                            <span>Hành động</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="body-info-product">
+                    <?php
                     $i = 0;
                     $total = 0;
                     $TongSoLuong = 0;
@@ -100,62 +104,59 @@ if (mysqli_num_rows($re_lay_giohang) != 0) {
                         $total += $tt;
                         $i++;
                     ?>
-                <tr class="body-list-info">
-                    <td class="body-item-stt"><?php echo $i ?></td>
-                    <td class="body-item-name-product"><input type="hidden" name="TenSP[]"
-                            value="<?php echo $row_giohang['TenSP'] ?>"><?php echo $row_giohang['TenSP'] ?></td>
-                    <td class="body-item-img"><input type="hidden" name="Hinh[]"
-                            value="<?php echo $row_giohang['Hinh'] ?>"><img class="product-img"
-                            src='assets/images/<?php echo $row_giohang['Hinh'] ?>'></td>
-                    <td class="body-item-new-price">
-                        <?php echo $row_giohang["Gia"] = number_format($row_giohang["Gia"], 0, ",", "."); ?><sup>đ</sup>
-                    </td>
+                        <tr class="body-list-info">
+                            <td class="body-item-stt"><?php echo $i ?></td>
+                            <td class="body-item-name-product"><input type="hidden" name="TenSP[]" value="<?php echo $row_giohang['TenSP'] ?>"><?php echo $row_giohang['TenSP'] ?></td>
+                            <td class="body-item-img"><input type="hidden" name="Hinh[]" value="<?php echo $row_giohang['Hinh'] ?>"><img class="product-img" src='assets/images/<?php echo $row_giohang['Hinh'] ?>'></td>
+                            <td class="body-item-new-price">
+                                <?php echo $row_giohang["Gia"] = number_format($row_giohang["Gia"], 0, ",", "."); ?><sup>đ</sup>
+                            </td>
 
-                    <td class="body-item-quantity">
-                        <input type="hidden" name="MaSP[]" value="<?php echo $row_giohang['MaSP'] ?>">
-                        <input type="hidden" name="Gia[]" value="<?php echo $tt; ?>">
-                        <input type="number" min="0" name="SoLuong[]" value="<?php echo $row_giohang['SoLuong'] ?>">
-                    </td>
-                    <td class="body-item-into-money">
-                        <?php echo number_format($tt, 0, ",", "."); ?><sup>đ</sup>
-                    </td>
-                    <td class="body-item-action">
-                        <button type="submit" name='delete_product' value="<?php echo $row_giohang['MaGioHang'] ?>">
-                            <img src="assets/images/icon/delete-icon.svg" alt="delete-icon">
-                        </button>
-                    </td>
-                </tr>
-                <?php
+                            <td class="body-item-quantity">
+                                <input type="hidden" name="MaSP[]" value="<?php echo $row_giohang['MaSP'] ?>">
+                                <input type="hidden" name="Gia[]" value="<?php echo $tt; ?>">
+                                <input type="number" min="0" name="SoLuong[]" value="<?php echo $row_giohang['SoLuong'] ?>">
+                            </td>
+                            <td class="body-item-into-money">
+                                <?php echo number_format($tt, 0, ",", "."); ?><sup>đ</sup>
+                            </td>
+                            <td class="body-item-action">
+                                <button type="submit" name='delete_product' value="<?php echo $row_giohang['MaGioHang'] ?>">
+                                    <img src="assets/images/icon/delete-icon.svg" alt="delete-icon">
+                                </button>
+                            </td>
+                        </tr>
+                    <?php
                     }
                     ?>
-                <tr>
+                    <tr>
 
-                    <td class="price-all-now">
-                        <input type="hidden" name="TongHD" value="<?php echo $total; ?>">
-                        <input type="hidden" name="TongSoLuong" value="<?php echo $TongSoLuong; ?>">
-                        <input type="hidden" name="TinhTrang" value="<?php echo 'Đang xử lý'; ?>">
-                    </td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="body-thong-bao">Tổng số tiền cho hóa đơn:
-            <?php echo number_format($total, 0, ",", "."); ?><sup>đ</sup></div>
-        <div class="option-cart">
-            <button class="btn-cart" type="submit" name="capnhatsoluong">
-                <span>Cập nhật giỏ hàng</span>
-            </button>
-            <button class="btn-cart" type="submit" id="thanhtoan" name="thanhtoan">
-                <span>Đặt hàng</span>
-            </button>
-            <button class="btn-cart" type="submit" name='deletecard'>
-                <span>Xóa giỏ hàng</span>
-            </button>
-            <button class="btn-cart"><a href="index.php">Về trang chủ</a></button>
-        </div>
-    </form>
+                        <td class="price-all-now">
+                            <input type="hidden" name="TongHD" value="<?php echo $total; ?>">
+                            <input type="hidden" name="TongSoLuong" value="<?php echo $TongSoLuong; ?>">
+                            <input type="hidden" name="TinhTrang" value="<?php echo 'Đang xử lý'; ?>">
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="body-thong-bao">Tổng số tiền cho hóa đơn:
+                <?php echo number_format($total, 0, ",", "."); ?><sup>đ</sup></div>
+            <div class="option-cart">
+                <button class="btn-cart" type="submit" name="capnhatsoluong">
+                    <span>Cập nhật giỏ hàng</span>
+                </button>
+                <button class="btn-cart" type="submit" id="thanhtoan" name="thanhtoan">
+                    <span>Đặt hàng</span>
+                </button>
+                <button class="btn-cart" type="submit" name='deletecard'>
+                    <span>Xóa giỏ hàng</span>
+                </button>
+                <button class="btn-cart"><a href="index.php">Về trang chủ</a></button>
+            </div>
+        </form>
 
-</div>
+    </div>
 <?php
 } else {
     echo "<div class='container'><h3 class='heading-cart'>Giỏ hàng của bạn đang trống<h3></div>";

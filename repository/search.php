@@ -7,7 +7,7 @@ if (isset($_GET['input-search'])) {
     if ($result->num_rows > 0) {
         // Mở thẻ section của kết quả tìm kiếm
 ?>
-        <section class="container-product">
+        <section class="container-product grid wide">
             <?php
             while ($row = $result->fetch_assoc()) {
                 // Hiển thị thông tin sản phẩm tìm kiếm
@@ -15,7 +15,7 @@ if (isset($_GET['input-search'])) {
                 <div class="product-item">
                     <!-- Ảnh -->
                     <div class="product-item_img">
-                        <a href="index.php?page=showroom.php&MaSP=<?php echo $row['MaSP'] ?>" class="product-item-link">
+                        <a href="index.php?page=showroom&MaSP=<?php echo $row['MaSP'] ?>" class="product-item-link">
                             <img src="assets/images/<?php echo $row['Hinh']; ?>" alt="device_search">
                         </a>
                     </div>
@@ -25,7 +25,7 @@ if (isset($_GET['input-search'])) {
                         <h2 class="product-name"><?php echo $row['TenSP'] ?></h2>
                         <p class="product-descripsion"><?php echo $row['MoTa'] ?></p>
                         <p class="product-price">Từ <?php echo number_format($row["Gia"], 0, ',', '.'); ?>đ</p>
-                        <a href="" class="product-buy">Mua</a>
+                        <a href="index.php?page=showroom&MaSP=<?php echo $row['MaSP'] ?>" class="product-buy">Mua</a>
                     </div>
                 </div>
             <?php

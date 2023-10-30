@@ -28,6 +28,7 @@ require "conn.php";
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/showroom.css">
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/events.css">
     <link rel="stylesheet" href="css/sign_up.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/donhang.css">
@@ -41,6 +42,7 @@ require "conn.php";
         <header style="border-bottom: 1px solid #3333;" class="header-main grid wide">
             <?php
             require "pages/header.php";
+            require "repository/events.php";
             ?>
         </header>
 
@@ -49,7 +51,7 @@ require "conn.php";
             <?php
             if (isset($_GET["page"])) {
                 $p = $_GET["page"]; //pages/$p.".php"
-                require "repository/$p";
+                require "repository/" . $p . ".php";
             } else {
                 require "repository/dashboard.php";
             }

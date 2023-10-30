@@ -1,5 +1,5 @@
 <section class="container-barner">
-    <a href="" class="product-link_ip15pro">
+    <a href="index.php?page=iphone" class="product-link_ip15pro">
         <div class="banner ip15pro">
             <div class="text-decription">
                 <h2 class="main-text">iPhone 15 Pro</h2>
@@ -8,7 +8,7 @@
         </div>
     </a>
 
-    <a href="" class="product-link_ip15">
+    <a href="index.php?page=iphone" class="product-link_ip15">
         <div class="banner ip15">
             <div class="text-decription">
                 <h2 class="main-text">iPhone 15</h2>
@@ -17,7 +17,7 @@
         </div>
     </a>
 
-    <a href="" class="product-link_watch-sr9">
+    <a href="index.php?page=iwatch" class="product-link_watch-sr9">
         <div class="banner w-sr9">
             <div class="text-decription">
                 <h2 style="font-size: 42px; letter-spacing: 2px;" class="main-text">
