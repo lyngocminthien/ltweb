@@ -1,0 +1,53 @@
+.footer {
+  padding-top: 25px;
+  border-top: 1px solid #6666;
+  margin: 50px 0 25px;
+}
+
+.copyright_country {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  color: #6e6e73;
+}
+
+.policy-list {
+  display: flex;
+  align-items: center;
+}
+
+.policy-item:not(:last-child) {
+  border-right: 1px solid #86868b;
+  margin: 10px 7px 10px 0;
+}
+
+.policy-item:hover .policy-item_link {
+  color: var(--notification);
+}
+
+.policy-item_link {
+  font-size: 17px;
+  font-weight: 500;
+  color: #424245;
+  padding-right: 10px;
+  transition: all 0.1s linear;
+}
+.company_address {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address p {
+  font-size: 15px;
+  color: #999999;
+  letter-spacing: 0.2;
+}
+.address p:not(:last-child) {
+  padding-bottom: 5px;
+}
+
+.noti_img img {
+  width: 176px;
+  height: 66px;
+}

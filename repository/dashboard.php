@@ -1,4 +1,4 @@
-<section class="container-slider">
+<section class="container-slider grid wide">
     <div class="slider">
         <div class="list">
             <div class="item">

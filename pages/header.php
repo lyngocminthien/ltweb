@@ -1,6 +1,6 @@
-<header class="header">
+<section class="header">
     <nav class="navigation">
-        <section class="nav-content">
+        <div class="nav-content">
             <ul class="nav-list">
                 <li class="nav-item">
                     <a class="heading-logo-link" href="index.php">
@@ -33,6 +33,6 @@
                     <a href="index.php?page=airpod" class="nav-item-link">AirPods</a>
                 </li>
             </ul>
-        </section>
+        </div>
     </nav>
-</header>
+</section>
