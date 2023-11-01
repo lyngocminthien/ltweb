@@ -33,6 +33,7 @@ require "conn.php";
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/donhang.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/slider.css">
 </head>
 
 <body>

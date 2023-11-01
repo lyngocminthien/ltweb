@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2023 at 02:53 AM
+-- Generation Time: Nov 01, 2023 at 04:24 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -42,8 +42,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`User`, `Pass`, `HoTen`, `Email`, `Sdt`, `DiaChi`, `LoaiTK`) VALUES
-('NgocCam', '456', 'Đinh Thị Ngọc Cầm', 'nc2015@gmail.com', '0788781119', 'Sóc Trăng', 0),
-('ViThanhNga', '123', 'Vi Thanh Ngà', 'vinga2015@gmail.com', '0788781116', 'Cần Thơ', 1);
+('minhthien', '123', 'Lý Ngọc Minh Thiện', 'minhthien@gmail.com', '077589390', 'Cần Thơ', 0),
+('ngoccam', '123', 'Đinh Thị Ngọc Cầm', 'ngoccam@gmail.com', '006573831', 'Sóc Trăng', 1);
 
 -- --------------------------------------------------------
 
@@ -89,8 +89,7 @@ CREATE TABLE `giohang` (
   `MaGioHang` int(11) NOT NULL,
   `TenSP` varchar(1000) NOT NULL,
   `MaSP` int(11) NOT NULL,
-  `GiaCu` int(11) NOT NULL,
-  `GiaMoi` int(11) NOT NULL,
+  `Gia` int(11) NOT NULL,
   `Hinh` varchar(500) NOT NULL,
   `SoLuong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -213,13 +212,13 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  MODIFY `MaCTDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=261;
+  MODIFY `MaCTDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=262;
 
 --
 -- AUTO_INCREMENT for table `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `MaGioHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=389;
+  MODIFY `MaGioHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=390;
 
 --
 -- AUTO_INCREMENT for table `loai`

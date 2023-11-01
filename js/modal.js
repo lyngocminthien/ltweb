@@ -1,4 +1,3 @@
-// Add
 const btnAccount = document.querySelector(".btnAccount");
 const modal = document.querySelector(".js-modal");
 const modalContainer = document.querySelector(".js-modal-container");
