@@ -6,6 +6,7 @@ let dots = document.querySelectorAll(".slider .dots li");
 
 let lengthItems = items.length - 1;
 let active = 0;
+
 next.onclick = function () {
   active = active + 1 <= lengthItems ? active + 1 : 0;
   reloadSlider();
@@ -14,9 +15,11 @@ prev.onclick = function () {
   active = active - 1 >= 0 ? active - 1 : lengthItems;
   reloadSlider();
 };
+
 let refreshInterval = setInterval(() => {
   next.click();
 }, 2000);
+
 function reloadSlider() {
   slider.style.left = -items[active].offsetLeft + "px";
   //
@@ -36,6 +39,7 @@ dots.forEach((li, key) => {
     reloadSlider();
   });
 });
-window.onresize = function (event) {
-  reloadSlider();
-};
+
+// window.onresize = function (event) {
+//   reloadSlider();
+// };

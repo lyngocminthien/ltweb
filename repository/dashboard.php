@@ -1,4 +1,4 @@
-<section class="container-slider grid wide">
+<section class="container-slider">
     <div class="slider">
         <div class="list">
             <div class="item">
@@ -17,10 +17,13 @@
                 <img src="assets/images/my_son.jpg" alt="mother">
             </div>
         </div>
+
         <div class="buttons">
-            <button id="prev"></button>
-            <button id="next"></button>
+            <button id="prev">
+                < </button>
+                    <button id="next">></button>
         </div>
+
         <ul class="dots">
             <li class="active"></li>
             <li></li>
