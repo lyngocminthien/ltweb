@@ -27,6 +27,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </button>
         </div>
     </form>
+
     <a href="index.php?page=cart" class="cart">
         <img src="assets/Images/Icon/cart-icon.svg" alt="cart-icon">
         <span>Giỏ hàng</span>

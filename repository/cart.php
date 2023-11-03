@@ -129,14 +129,13 @@ if (mysqli_num_rows($re_lay_giohang) != 0) {
                     <?php
                     }
                     ?>
-                    <tr>
 
+                    <tr>
                         <td class="price-all-now">
                             <input type="hidden" name="TongHD" value="<?php echo $total; ?>">
                             <input type="hidden" name="TongSoLuong" value="<?php echo $TongSoLuong; ?>">
                             <input type="hidden" name="TinhTrang" value="<?php echo 'Đang xử lý'; ?>">
                         </td>
-                        <td></td>
                     </tr>
                 </tbody>
             </table>
