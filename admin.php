@@ -1,4 +1,7 @@
 <?php
+require "functions.php";
+require "conn.php";
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
     if (!isset($_SESSION["User"])) {
@@ -19,18 +22,34 @@ if (session_status() == PHP_SESSION_NONE) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin Apple Store</title>
-        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="css/admin/captaikhoan.css">
+        <link rel="stylesheet" href="css/admin/login.css">
     </head>
 
     <body>
-        <div>
-            <form class="" method="POST">
-                <div class="">
-                    <h1 class="">Xin chào admin <?php echo $_SESSION['User'] ?>.</h1>
-                    <input class="" type="submit" name="dangxuat" value="Thoát">
-                </div>
-            </form>
-        </div>
+        <!-- ------------------------ Apple Store ------------------------------- -->
+        <main class="wrapper">
+            <!-- ------------------------ Header ------------------------------- -->
+            <header class="header_admin">
+                <?php
+                require "pages/admin/header.php";
+                require "repository/admin/events.php";
+                ?>
+            </header>
+
+            <!-- ------------------------ Body ------------------------------- -->
+            <section class="main_admin">
+                <?php
+                $path = "repository/admin/";
+                if (isset($_GET["page"])) {
+                    $p = $_GET["page"];
+                    require $path . $p . ".php";
+                } else {
+                    require $path . "dashboard.php";
+                }
+                ?>
+            </section>
+        </main>
     </body>
 
     </html>
