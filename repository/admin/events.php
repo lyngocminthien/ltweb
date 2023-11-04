@@ -24,7 +24,7 @@
 
                 <form class="admin.php" method="POST">
                     <div class="">
-                        <h1 class="">Xin chào, <?php echo $_SESSION['User'] ?></h1>
+                        <h1 class="">Xin chào admin <?php echo $_SESSION['User'] ?></h1>
                         <input class="" type="submit" name="thoat" value="Thoát">
                     </div>
                 </form>

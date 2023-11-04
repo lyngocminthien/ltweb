@@ -1,8 +1,5 @@
 <?php
-
-if (session_status() == PHP_SESSION_NONE)
-    session_start();
-
+session_start();
 
 if (isset($_POST['addtocard'])) {
     $TenSP = $_POST['TenSP'];
@@ -12,6 +9,7 @@ if (isset($_POST['addtocard'])) {
     $SoLuong = $_POST['SoLuong'];
     $re_LayGio = layGio($conn, $MaSP);
     $count = mysqli_num_rows($re_LayGio);
+    // kiểm tra xem trong table giỏ hàng có sản phẩm đó chưa. Nếu có rồi thì tăng số lượng lên 1
     if ($count > 0) {
         $r = mysqli_fetch_array($re_LayGio);
         $SoLuong = $r['SoLuong'] + 1;
@@ -38,13 +36,16 @@ if (isset($_POST['addtocard'])) {
     $re_Delete = XoaGio($conn);
 } else if (isset($_POST['thanhtoan']) && isset($_SESSION['User'])) {
     $re_Delete = XoaGio($conn);
+    // random mã đơn hàng có số trong khoảng (0<=x<=9999)
     $MaDH = rand(0, 9999);
+    // biến session user tạo bên đăng nhập á gán cho biến $User để lưu thông tin khách hàng đã mua sản phẩm 
     $User = $_SESSION['User'];
     $TongSoLuong = $_POST['TongSoLuong'];
     $TongHD = $_POST['TongHD'];
     $TinhTrang = $_POST['TinhTrang'];
     $re_don = NhapDon($conn, $MaDH, $TongSoLuong, $User, $TinhTrang, $TongHD);
 
+    // biến i sẽ chạy từ 0 đến tổng số mã sản phẩm hiện đang có (ví dụ có 3 sản phẩm thì sẽ có 3 mã sản phẩm != nhau)
     for ($i = 0; $i < count($_POST['MaSP']); $i++) {
         $MaSP = $_POST['MaSP'][$i];
         $SoLuong = $_POST['SoLuong'][$i];
@@ -60,6 +61,8 @@ if (isset($_POST['addtocard'])) {
             document.querySelector(\'.js-modal\').style.display ="none";
         });</script>';
 }
+
+// Hiện dữ liệu trong giỏ hàng
 $re_lay_giohang = layHetGioHang($conn);
 if (mysqli_num_rows($re_lay_giohang) != 0) {
 ?>

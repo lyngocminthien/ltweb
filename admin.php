@@ -31,8 +31,8 @@ require "conn.php";
     <!-- Link fonts && icon -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/admin/captaikhoan.css">
-    <link rel="stylesheet" href="css/admin/login.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/admin/signup.css">
 </head>
 
 <body>

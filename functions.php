@@ -42,7 +42,7 @@ function SignUp($conn, $user, $pass, $hoTen, $email, $sdt, $diaChi)
 }
 function SignUpAdmin($conn, $user, $pass, $hoTen, $email, $sdt, $diaChi, $loaiTk)
 {
-    $sql = "INSERT INTO account (User, Pass, HoTen, Email, Sdt, DiaChi)
+    $sql = "INSERT INTO account (User, Pass, HoTen, Email, Sdt, DiaChi, LoaiTK)
     VALUES ('$user', '$pass', '$hoTen', '$email', '$sdt', '$diaChi', '$loaiTk')";
     return mysqli_query($conn, $sql);
 }

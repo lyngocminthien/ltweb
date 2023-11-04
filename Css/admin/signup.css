@@ -3,14 +3,17 @@
   max-width: 100%;
   margin: 0 auto;
   border: 1px solid #3333;
+  border-radius: 10px;
 }
 .heading {
-  color: #fff;
-  background-color: #007bff;
+  color: #000;
+  background-color: var(--primary-color);
   text-align: center;
   padding: 15px 0;
   margin: 0 0 20px;
   letter-spacing: 1.3px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 form {
@@ -22,44 +25,17 @@ form {
   color: #414040;
 }
 
-.name {
-  display: flex;
-  justify-content: space-between;
-}
-
-.name .hoten {
-  margin-right: 25px;
-}
-
-.name .hoten,
-.name .tenchinh {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
-.sex span {
-  font-size: 18px;
-}
-
-.check-sex {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.check-sex label {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
 label input {
   width: 30px;
   height: 20px;
 }
 
+.hoten,
 .email,
 .account,
-.pw {
+.pw,
+.numberphone,
+.address {
   display: flex;
   flex-direction: column;
 }
@@ -95,12 +71,13 @@ input[type="password"]:focus {
 .submit input {
   width: 500px;
   height: 50px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: #000;
   font-size: 20px;
   border: none;
   border-radius: 5px;
   transition: 0.2s;
+  cursor: pointer;
 }
 input[type="submit"]:hover {
   box-shadow: 3px 2px 10px 0px #aeadad;
