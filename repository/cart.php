@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if (isset($_POST['addtocard'])) {
     $TenSP = $_POST['TenSP'];

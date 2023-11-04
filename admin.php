@@ -32,7 +32,10 @@ require "conn.php";
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/admin/dashboard.css">
     <link rel="stylesheet" href="css/admin/signup.css">
+    <link rel="stylesheet" href="css/admin/header.css">
+    <link rel="stylesheet" href="css/admin/events.css">
 </head>
 
 <body>
@@ -47,7 +50,7 @@ require "conn.php";
         </header>
 
         <!-- ------------------------ Body ------------------------------- -->
-        <section class="main_admin">
+        <section class="main_admin" style="margin-bottom: 20px">
             <?php
             $path = "repository/admin/";
             if (isset($_GET["page"])) {

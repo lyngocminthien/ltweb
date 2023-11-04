@@ -1,0 +1,15 @@
+.dashboard-admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-admin h1 {
+  font-size: 41px;
+  margin-right: 16px;
+}
+.dashboard-admin img {
+  position: relative;
+  top: -4px;
+  width: 81px;
+}

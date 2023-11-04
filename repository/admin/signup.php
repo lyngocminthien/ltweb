@@ -36,6 +36,7 @@
         <div class="submit">
             <input type="submit" name="signUp" value="TẠO">
         </div>
+
     </form>
 </div>
 

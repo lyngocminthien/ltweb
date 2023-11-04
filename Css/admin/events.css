@@ -1,0 +1,125 @@
+.container_events {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 0 2%;
+  border-top: 1px solid #3333;
+  border-bottom: 1px solid #3333;
+  margin-bottom: 20px;
+}
+
+.search-input-admin {
+  display: flex;
+  align-items: center;
+}
+.search-input-admin input {
+  width: 350px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid #dfdcdc;
+  outline: none;
+  margin-right: 13px;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+.search-input-admin input:focus {
+  box-shadow: 3px 2px 10px 0px #aeadad;
+  transform: scale(1.03);
+}
+
+.search-input-admin button {
+  cursor: pointer;
+}
+
+.add_group,
+.look_group,
+.update_group {
+  position: relative;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: var(--color-text-product);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.add_group:hover .group-list,
+.look_group:hover .group-list,
+.update_group:hover .group-list {
+  display: flex;
+}
+.add_group::after,
+.look_group::after,
+.update_group::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100px;
+  height: 17px;
+}
+
+.group-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #dfdddd;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.group-link {
+  display: inline-block;
+  color: var(--color-text-product);
+  padding: 10px 0 10px 10px;
+  transition: 0.2s;
+}
+.group-item:hover .group-link {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.add_account-admin a {
+  display: inline-block;
+  font-size: 18px;
+  color: var(--color-text-product);
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.add_account-admin:hover a {
+  box-shadow: 3px 2px 10px 0px #aeadad;
+  transform: scale(1.08);
+}
+
+.admin-here {
+  display: flex;
+  align-items: center;
+}
+.admin-here span {
+  font-size: 18px;
+}
+.admin-here span span {
+  font-size: 29px;
+  color: #dd3619;
+}
+.admin-here input {
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background-color: var(--notification);
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 50px;
+  transition: 0.2s;
+  cursor: pointer;
+}
