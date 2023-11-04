@@ -31,13 +31,19 @@ function timkiemSP($conn, $search)
 }
 function logIn($conn, $taikhoan, $matkhau)
 {
-    $sql = "SELECT * FROM account WHERE user = '$taikhoan' AND pass = '{$matkhau}' LIMIT 1";
+    $sql = "SELECT * FROM account WHERE user = '$taikhoan' AND pass = '$matkhau' LIMIT 1";
     return mysqli_query($conn, $sql);
 }
 function SignUp($conn, $user, $pass, $hoTen, $email, $sdt, $diaChi)
 {
     $sql = "INSERT INTO account (User, Pass, HoTen, Email, Sdt, DiaChi)
     VALUES ('$user', '$pass', '$hoTen', '$email', '$sdt', '$diaChi')";
+    return mysqli_query($conn, $sql);
+}
+function SignUpAdmin($conn, $user, $pass, $hoTen, $email, $sdt, $diaChi, $loaiTk)
+{
+    $sql = "INSERT INTO account (User, Pass, HoTen, Email, Sdt, DiaChi)
+    VALUES ('$user', '$pass', '$hoTen', '$email', '$sdt', '$diaChi', '$loaiTk')";
     return mysqli_query($conn, $sql);
 }
 function layGio($conn, $MaSP)

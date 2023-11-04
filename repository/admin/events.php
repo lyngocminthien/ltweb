@@ -1,63 +1,42 @@
-<link rel="stylesheet" href="css/events.css">
-
-
 <section class="container">
     <div class="container_events">
-        <?php
-        if (isset($_POST['logout'])) {
-            if (isset($_GET["page"])) {
-                $p = $_GET["page"];
-                header("Location:admin.php?page=" . $p);
-            } else {
-                header("Location:admin.php");
-            }
-        }
-        ?>
-
-        <div class="nav-top_search">
-            <form action="index.php" method="GET">
-                <input type="hidden" name="page" value="search">
+        <div class="search_admin">
+            <form action="" method="GET">
+                <input type="hidden" name="" value="">
                 <div class="search">
-                    <input type="text" name="input-search" id="input-search" placeholder="Tìm kiếm trên applestore.com"
-                        required>
+                    <input type="text" name="searchInput" id="searchInput" placeholder="applestore.com..." required>
                     <button type="submit">
-                        <img src="assets/Images/Icon/search-icon.svg" alt="search-icon">
+                        <img style="width: 20px;" src="assets/Images/Icon/search-icon.svg" alt="search-icon">
                     </button>
                 </div>
             </form>
-
-
         </div>
 
+        <div class="add_account-admin">
+            <a href="?page=signup">Cấp tài khoản</a>
+        </div>
 
-        <?php
+        <div class="sign-in_account-admin">
+            <?php
+            // Kiểm tra xem người dùng đã đăng nhập hay chưa
+            if (isset($_SESSION['User'])) {
+            ?>
 
-        $re = layThongTin($conn);
-        $User = $_SESSION['User'];
-        while ($r = mysqli_fetch_array($re)) {
-            if ($User == $r['User']) {
-                break;
+                <form class="admin.php" method="POST">
+                    <div class="">
+                        <h1 class="">Xin chào, <?php echo $_SESSION['User'] ?></h1>
+                        <input class="" type="submit" name="thoat" value="Thoát">
+                    </div>
+                </form>
+
+            <?php
             }
-        }
-        ?>
-        <form method="POST">
-            <div class="account_login">
-                <div class="account_img">
-                    <img src="assets/images/icon/account-icon.svg" alt="account_login">
-                    <span><?php echo $r['HoTen']; ?></span>
-                </div>
-                <div class="cart_log-out">
-                    <input type="submit" name="logout" value="Đăng xuất">
-                </div>
-            </div>
-        </form>
-
-
-
-
-
-        <a href="?page=login.php">Đăng nhập</a>
-
-
+            // Kiểm tra xem người dùng đã nhấn nút đăng xuất hay chưa
+            if (isset($_POST['thoat'])) {
+                // Chuyển hướng người dùng đến trang đăng nhập hoặc trang khác
+                header('Location: index.php');
+            }
+            ?>
+        </div>
     </div>
 </section>
