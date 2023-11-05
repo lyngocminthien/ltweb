@@ -77,7 +77,7 @@ if (isset($_SESSION['User'])) {
                         echo 'Đã hủy đơn ' . $MaDH . ' thành công';
                     } elseif ($r['ChapThuan'] == 2) {
                         $sql = mysqli_query($conn, "UPDATE donhang SET TinhTrang='Đang giao hàng' WHERE MaDH='$MaDH'");
-                        echo 'Đơn hàng ' . $MaDH . ' đang được giao tới bạn một cách nhanh nhất';
+                        echo 'Đơn hàng ' . $MaDH . ' đang được giao tới bạn...';
                     } elseif ($r['ChapThuan'] == 3) {
                         $sql = mysqli_query($conn, "UPDATE donhang SET TinhTrang='Không thành công' WHERE MaDH='$MaDH'");
                         echo 'Có thể kiện hàng của bạn đang gặp sự cố. Liên hệ cộng tác viên để được phản hồi';
@@ -121,7 +121,7 @@ if (isset($_SESSION['User'])) {
                                     <td class="body-item-img"><img class="product-img" src='assets/images/<?php echo $r['Hinh'] ?>'>
                                     </td>
                                     <td><?php echo $r['NgayDatDon'] ?></td>
-                                    <td><?php echo $r['Gia'] = number_format($r["Gia"], 0); ?><sup>đ</sup></td>
+                                    <td><?php echo $r['Gia'] = number_format($r["Gia"], 0, ",", "."); ?><sup>đ</sup></td>
                                 </tr>
                             <?php
                             }
@@ -138,7 +138,16 @@ if (isset($_SESSION['User'])) {
 
                             <?php
                             }
-                            // Ngược lại thì chỉ có nút đặt lại hoạt động (là có thể bấm được) 
+                            // Nếu "Đang giao hàng" thì sẽ không có nút nào hoạt động
+                            else if ($r['TinhTrang'] == "Đang giao hàng") {
+                            ?>
+                                <div class="body-list-info">
+                                    <button class="btn-cart-errol" type="button" id="btnHuyDon" disabled>Hủy đơn hàng</button>
+                                    <button class="btn-cart-errol" type="submit" id="btnDatLai" disabled>Đặt lại</button>
+                                </div>
+                            <?php
+                            }
+                            // Ngược lại thì chỉ có nút đặt lại hoạt động (là có thể bấm được)  
                             else {
                             ?>
                                 <div class="body-list-info">

@@ -8,20 +8,12 @@
   text-align: center;
   padding: 25px 0;
 }
-.head-list-info {
-  color: #333;
-  font-size: 20px;
-}
 .head-item-info {
   background-color: var(--primary-color);
   color: var(--color-text-product);
   font-weight: 500;
-  font-size: 19px;
-}
-.head-item-info span {
-  display: block;
-  width: 100%;
-  padding: 20px 15px;
+  font-size: 20px;
+  padding: 15px;
 }
 
 /* body information product */

@@ -101,6 +101,18 @@ function NhapDon($conn, $MaDH, $TongSoLuong, $User, $TinhTrang, $TongHD)
     $sql = "INSERT INTO donhang (MaDH, TongSoLuong, User, TinhTrang,  TongHD) VALUES ('$MaDH', '$TongSoLuong', '$User', '$TinhTrang', '$TongHD')";
     return mysqli_query($conn, $sql);
 }
+
+function UpdateDH($conn, $MaDH, $ChapThuan)
+{
+    $sql = "UPDATE donhang SET ChapThuan='$ChapThuan' WHERE MaDH='$MaDH'";
+    return mysqli_query($conn, $sql);
+}
+function XoaDH($conn)
+{
+    $sql = "DELETE FROM donhang";
+    return mysqli_query($conn, $sql);
+}
+
 function layCTDH($conn)
 {
     $sql = "SELECT * FROM chitietdonhang ";
@@ -118,6 +130,13 @@ function NhapChiTietDon($conn, $MaDH, $MaSP, $SoLuong, $TenSP, $Hinh, $Gia)
         VALUES ('$MaDH', '$MaSP', '$SoLuong','$TenSP','$Hinh','$Gia')";
     return mysqli_query($conn, $sql);
 }
+
+function XoaCTDH($conn)
+{
+    $sql = "DELETE FROM chitietdonhang";
+    return mysqli_query($conn, $sql);
+}
+
 function layThongTin($conn)
 {
     $sql = "SELECT * FROM account";

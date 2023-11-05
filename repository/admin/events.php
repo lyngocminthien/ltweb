@@ -16,10 +16,10 @@
             Xem
             <ul class="group-list">
                 <li class="group-item">
-                    <a href="" class="group-link">Xem đơn hàng</a>
+                    <a href="?page=donhang" class="group-link">Xem đơn hàng</a>
                 </li>
                 <li class="group-item">
-                    <a href="" class="group-link">Xem chi tiết đơn hàng</a>
+                    <a href="?page=ctdh" class="group-link">Xem chi tiết đơn hàng</a>
                 </li>
             </ul>
         </div>

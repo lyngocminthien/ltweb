@@ -27,6 +27,11 @@ html {
   margin: 0 auto;
 }
 
+.grid.wide1 {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 ul {
   margin: 0;
   padding: 0;
