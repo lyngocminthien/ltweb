@@ -1,44 +1,46 @@
-<div class="container_captaikhoan">
-    <h2 class="heading">CẤP TÀI KHOẢN</h2>
-    <form method="post">
-        <div class="information">
-            <div class="hoten">
-                <label for="ten">Họ tên:</label>
-                <input type="text" name="ten" id="ten" placeholder="Nhập tên" required>
+<section class="container">
+    <div class="container_captaikhoan">
+        <h2 class="heading">CẤP TÀI KHOẢN</h2>
+        <form method="post">
+            <div class="information">
+                <div class="hoten">
+                    <label for="ten">Họ tên:</label>
+                    <input type="text" name="ten" id="ten" placeholder="Nhập tên" required>
+                </div>
+
+                <div class="email">
+                    <label for="mail">Email:</label>
+                    <input type="text" name="mail" id="mail" placeholder="Nhập email" required>
+                </div>
+
+                <div class="account">
+                    <label for="user">Tài khoản:</label>
+                    <input type="text" name="user" id="user" placeholder="Nhập tài khoản" required>
+                </div>
+
+                <div class="pw">
+                    <label for="pass">Mật khẩu:</label>
+                    <input type="password" name="pass" id="pass" placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <div class="numberphone">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" required>
+                </div>
+
+                <div class="address">
+                    <label for="dc">Nhập địa chỉ:</label>
+                    <input type="text" name="dc" id="dc" placeholder="Nhập địa chỉ" required>
+                </div>
             </div>
 
-            <div class="email">
-                <label for="mail">Email:</label>
-                <input type="text" name="mail" id="mail" placeholder="Nhập email" required>
+            <div class="submit">
+                <input type="submit" name="signUp" value="TẠO">
             </div>
 
-            <div class="account">
-                <label for="user">Tài khoản:</label>
-                <input type="text" name="user" id="user" placeholder="Nhập tài khoản" required>
-            </div>
-
-            <div class="pw">
-                <label for="pass">Mật khẩu:</label>
-                <input type="password" name="pass" id="pass" placeholder="Nhập mật khẩu" required>
-            </div>
-
-            <div class="numberphone">
-                <label for="phone">Số điện thoại:</label>
-                <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" required>
-            </div>
-
-            <div class="address">
-                <label for="dc">Nhập địa chỉ:</label>
-                <input type="text" name="dc" id="dc" placeholder="Nhập địa chỉ" required>
-            </div>
-        </div>
-
-        <div class="submit">
-            <input type="submit" name="signUp" value="TẠO">
-        </div>
-
-    </form>
-</div>
+        </form>
+    </div>
+</section>
 
 <?php
 if (isset($_POST['signUp'])) {

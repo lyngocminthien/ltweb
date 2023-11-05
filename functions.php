@@ -9,11 +9,25 @@ function layLoaiID($conn, $id)
     $sql = "select * from loai where MaLoai = '$id' order by thuTu";
     return mysqli_query($conn, $sql);
 }
-function laySanPham($conn, $n)
+
+function addLoai($conn, $TenLoai, $NgayTao, $thuTu)
 {
-    $sql = "select * from sanpham order by MaSP limit " . $n;
+    $sql = "INSERT INTO loai VALUES ('NULL', '$TenLoai', '$NgayTao', '$thuTu')";
     return mysqli_query($conn, $sql);
 }
+
+function laySanPham($conn)
+{
+    $sql = "select * from sanpham order by MaSP";
+    return mysqli_query($conn, $sql);
+}
+
+function addSP($conn, $TenSP, $MoTa, $Gia, $Hinh, $NoiDung, $MaLoai, $NgayTao)
+{
+    $sql = "INSERT INTO sanpham VALUES ('NULL', '$TenSP', '$MoTa', '$Gia', '$Hinh', '$NoiDung', '$MaLoai', '$NgayTao')";
+    return mysqli_query($conn, $sql);
+}
+
 function laySP($conn, $idLoai)
 {
     $sql = "select * from sanpham where Maloai = '$idLoai'";

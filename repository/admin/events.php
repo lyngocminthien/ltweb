@@ -14,12 +14,18 @@
 
         <div class="look_group">
             Xem
-            <ul class="group-list">
+            <ul class="group-list h-175px">
                 <li class="group-item">
                     <a href="?page=donhang" class="group-link">Xem đơn hàng</a>
                 </li>
                 <li class="group-item">
                     <a href="?page=ctdh" class="group-link">Xem chi tiết đơn hàng</a>
+                </li>
+                <li class="group-item">
+                    <a href="?page=product" class="group-link">Xem sản phẩm</a>
+                </li>
+                <li class="group-item">
+                    <a href="?page=loai" class="group-link">Xem loại</a>
                 </li>
             </ul>
         </div>
@@ -28,10 +34,10 @@
             Thêm
             <ul class="group-list">
                 <li class="group-item">
-                    <a href="" class="group-link">Thêm sản phẩm</a>
+                    <a href="?page=add_product" class="group-link">Thêm sản phẩm</a>
                 </li>
                 <li class="group-item">
-                    <a href="" class="group-link">Thêm loại</a>
+                    <a href="?page=add_loai" class="group-link">Thêm loại</a>
                 </li>
             </ul>
         </div>
@@ -40,10 +46,10 @@
             Cập nhật
             <ul class="group-list">
                 <li class="group-item">
-                    <a href="" class="group-link">Cập nhật sản phẩm</a>
+                    <a href="?page=update_product" class="group-link">Cập nhật sản phẩm</a>
                 </li>
                 <li class="group-item">
-                    <a href="" class="group-link">Cập nhật loại</a>
+                    <a href="?page=update_loai" class="group-link">Cập nhật loại</a>
                 </li>
             </ul>
         </div>

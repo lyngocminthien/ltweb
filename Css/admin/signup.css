@@ -45,6 +45,14 @@ label {
   padding-bottom: 8px;
 }
 
+.information input[type="date"] {
+  font-size: 16px;
+  color: #636262;
+  padding: 10px 15px;
+  border: 1px solid #d6d8db;
+  margin-bottom: 20px;
+}
+
 .information input[type="text"],
 .information input[type="password"] {
   font-size: 15px;
