@@ -1,8 +1,9 @@
 <section class="container">
     <div class="container_events">
         <div class="search_admin">
-            <form action="" method="GET">
-                <input type="hidden" name="" value="">
+            <form method="GET">
+                <!-- dùng hidden để đưa dữ liệu cùng với searchInput lên url để tìm kiếm -->
+                <input type="hidden" name="page" value="search">
                 <div class="search-input-admin">
                     <input type="text" name="searchInput" id="searchInput" placeholder="applestore.com..." required>
                     <button type="submit">

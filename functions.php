@@ -15,6 +15,21 @@ function addLoai($conn, $TenLoai, $NgayTao, $thuTu)
     $sql = "INSERT INTO loai VALUES ('NULL', '$TenLoai', '$NgayTao', '$thuTu')";
     return mysqli_query($conn, $sql);
 }
+function xoaLoaiID($conn, $MaLoai)
+{
+    $sql = "DELETE FROM loai WHERE MaLoai = '$MaLoai'";
+    return mysqli_query($conn, $sql);
+}
+function xoaLoai($conn)
+{
+    $sql = "DELETE FROM loai";
+    return mysqli_query($conn, $sql);
+}
+function updateLoai($conn, $MaLoai, $TenLoai, $NgayTao, $thuTu)
+{
+    $sql = "UPDATE loai SET TenLoai = '$TenLoai', NgayTao = '$NgayTao', thuTu = '$thuTu' WHERE MaLoai = '$MaLoai'";
+    return mysqli_query($conn, $sql);
+}
 
 function laySanPham($conn)
 {
@@ -38,6 +53,23 @@ function layChiTietSanPham($conn, $MaSP)
     $layChiTietSanPham = "SELECT * FROM sanpham WHERE MaSP = $MaSP";
     return mysqli_query($conn, $layChiTietSanPham);
 }
+
+function xoaSPID($conn, $MaSP)
+{
+    $sql = "DELETE FROM sanpham WHERE MaSP = '$MaSP'";
+    return mysqli_query($conn, $sql);
+}
+function xoaSP($conn)
+{
+    $sql = "DELETE FROM sanpham";
+    return mysqli_query($conn, $sql);
+}
+function updateSP($conn, $MaSP, $TenSP, $MoTa, $Gia, $Hinh, $NoiDung, $MaLoai, $NgayTao)
+{
+    $sql = "UPDATE sanpham SET TenSP = '$TenSP', MoTa = '$MoTa', Gia = '$Gia', Hinh = '$Hinh', NoiDung = '$NoiDung', MaLoai = '$MaLoai', NgayTao = '$NgayTao' WHERE MaSP = '$MaSP'";
+    return mysqli_query($conn, $sql);
+}
+
 function timkiemSP($conn, $search)
 {
     $sql = "SELECT * FROM sanpham WHERE TenSP LIKE '%$search%'";
