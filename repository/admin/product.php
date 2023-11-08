@@ -22,34 +22,35 @@
                     $result_sanpham = laySanPham($conn);
                     while ($row = $result_sanpham->fetch_assoc()) {
                     ?>
-                        <tr class="body-list-info">
-                            <td><?php echo $row['MaSP'] ?></td>
-                            <td><?php echo $row['TenSP'] ?></td>
-                            <td><?php echo $row['MoTa'] ?></td>
-                            <td class="body-item-img">
-                                <img class="product-img" src='assets/images/<?php echo $row['Hinh'] ?>'>
-                            </td>
-                            <td>
-                                <ul>
-                                    <?php
+                    <tr class="body-list-info">
+                        <td><?php echo $row['MaSP'] ?></td>
+                        <td><?php echo $row['TenSP'] ?></td>
+                        <td><?php echo $row['MoTa'] ?></td>
+                        <td class="body-item-img">
+                            <img class="product-img" src='assets/images/<?php echo $row['Hinh'] ?>'>
+                        </td>
+                        <td style="width: 22%;">
+                            <ul>
+                                <?php
                                     $noiDung = $row['NoiDung'];
-                                    $noiDung = str_replace("\n", "</li><li>", $noiDung);
-                                    echo "<li>" . $noiDung . "</li>";
+                                    $noiDung = str_replace("\n", "</li><li style='line-height: 1.8'>", $noiDung);
+                                    echo "<li style='line-height: 1.8'>" . $noiDung . "</li>";
                                     ?>
-                                </ul>
-                            </td>
-                            <td style="width: 145px;"><?php echo $row['NgayTao'] ?></td>
-                            <td><?php echo $row['Gia'] = number_format($row["Gia"], 0, ",", "."); ?><sup>đ</sup></td>
-                            <td><?php echo $row['MaLoai'] ?></td>
-                            <td class="body-item-action">
-                                <a href="?page=update_product&masp=<?php echo $row['MaSP']; ?>"><img style="width: 50px;" src="assets/images/icon/update-icon.svg" alt="update-icon"></a>
-                            </td>
-                            <td class="body-item-action">
-                                <button type="submit" name='deleteProduct' value="<?php echo $row['MaSP'] ?>">
-                                    <img src="assets/images/icon/delete-icon.svg" alt="delete-icon">
-                                </button>
-                            </td>
-                        </tr>
+                            </ul>
+                        </td>
+                        <td style="width: 145px;"><?php echo $row['NgayTao'] ?></td>
+                        <td><?php echo $row['Gia'] = number_format($row["Gia"], 0, ",", "."); ?><sup>đ</sup></td>
+                        <td><?php echo $row['MaLoai'] ?></td>
+                        <td class="body-item-action">
+                            <a href="?page=update_product&masp=<?php echo $row['MaSP']; ?>"><img style="width: 50px;"
+                                    src="assets/images/icon/update-icon.svg" alt="update-icon"></a>
+                        </td>
+                        <td class="body-item-action">
+                            <button type="submit" name='deleteProduct' value="<?php echo $row['MaSP'] ?>">
+                                <img src="assets/images/icon/delete-icon.svg" alt="delete-icon">
+                            </button>
+                        </td>
+                    </tr>
                     <?php
                     }
                     ?>

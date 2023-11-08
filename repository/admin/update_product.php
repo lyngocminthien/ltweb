@@ -23,12 +23,14 @@ $row = $result_masp->fetch_assoc();
                     <label for="hinhanh">Hình ảnh sản phẩm:</label>
                     <img style="width: 100px;" src="assets/images/<?php echo $row["Hinh"]; ?>" alt="image_sp">
                     <input type="hidden" name="hinhanh_tamp" value="<?php echo $row["Hinh"]; ?>">
-                    <input type="file" name="hinhanhnew" id="hinhanh">
+                    <input style="margin: 20px 0;" type="file" name="hinhanhnew" id="hinhanh">
                 </div>
 
                 <div class="pw noidung">
                     <label for="nd">Nội dung:</label>
-                    <textarea style="height: 200px;" name="noidungnew" id="nd"><?php echo $row["NoiDung"]; ?></textarea>
+                    <textarea
+                        style="height: 250px; font-size: 15px; padding: 10px 0 0 10px; margin-bottom: 20px; border-radius: 5px;"
+                        name="noidungnew" id="nd"><?php echo $row["NoiDung"]; ?></textarea>
                 </div>
 
                 <div class="email">
@@ -41,9 +43,10 @@ $row = $result_masp->fetch_assoc();
                     <input type="text" name="gianew" id="gia" value="<?php echo $row["Gia"]; ?>">
                 </div>
 
-                <div class="loai_sanpham">
+                <div style="margin-bottom: 20px" class="loai_sanpham">
                     <label for="lsp">Loại sản phẩm:</label>
-                    <select name="lspnew" id="lsp">
+                    <select style="font-size: 16px; font-weight: 600; padding: 5px 10px; border-radius: 15px;"
+                        name="lspnew" id="lsp">
                         <?php
                         $result_dsLoai = layLoai($conn);
                         while ($row = $result_dsLoai->fetch_assoc()) {

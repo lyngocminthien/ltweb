@@ -15,12 +15,12 @@
 
                 <div class="account hinh">
                     <label for="hinhanh">Hình ảnh sản phẩm:</label>
-                    <input type="file" name="hinhanh" id="hinhanh">
+                    <input style="margin-bottom: 20px;" type="file" name="hinhanh" id="hinhanh">
                 </div>
 
                 <div class="pw noidung">
                     <label for="nd">Nội dung:</label>
-                    <textarea name="nd" id="nd"></textarea>
+                    <textarea style="height: 250px; font-size: 15px; margin-bottom: 20px; border-radius: 5px;" name="nd" id="nd"></textarea>
                 </div>
 
                 <div class="numberphone ngaytao">
@@ -33,9 +33,9 @@
                     <input type="text" name="gia" id="gia" placeholder="Nhập giá sản phẩm" required>
                 </div>
 
-                <div class="loai_sanpham">
+                <div style="margin-bottom: 20px" class="loai_sanpham">
                     <label for="lsp">Loại sản phẩm:</label>
-                    <select name="lsp" id="lsp">
+                    <select style="font-size: 16px; font-weight: 600; padding: 5px 10px; border-radius: 15px;" name="lsp" id="lsp">
                         <?php
                         $result_dsLoai = layLoai($conn);
                         while ($row = $result_dsLoai->fetch_assoc()) {
