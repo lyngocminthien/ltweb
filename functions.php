@@ -75,9 +75,9 @@ function timkiemSP($conn, $search)
     $sql = "SELECT * FROM sanpham WHERE TenSP LIKE '%$search%'";
     return mysqli_query($conn, $sql);
 }
-function logIn($conn, $taikhoan, $matkhau)
+function logIn($conn, $taikhoan)
 {
-    $sql = "SELECT * FROM account WHERE user = '$taikhoan' AND pass = '$matkhau' LIMIT 1";
+    $sql = "SELECT * FROM account WHERE User = '$taikhoan'";
     return mysqli_query($conn, $sql);
 }
 function SignUp($conn, $user, $pass, $hoTen, $email, $sdt, $diaChi)

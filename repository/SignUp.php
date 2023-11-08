@@ -1,45 +1,46 @@
 <div class="container_sign-up grid wide">
-    <h3 class="sign-up-now">Đăng Ký Tài Khoản Apple Store</h3>
+  <h3 class="sign-up-now">Đăng Ký Tài Khoản Apple Store</h3>
 
-    <form class="sign-up-form" method="POST">
-        <div class="name-acc">
-            <label for="hoten">Họ và tên:</i></label>
-            <input type="text" id="hoten" name="HoTen" placeholder="Họ và tên">
-        </div>
+  <form class="sign-up-form" method="POST">
+    <div class="name-acc">
+      <label for="hoten">Họ và tên:</i></label>
+      <input type="text" id="hoten" name="HoTen" placeholder="Họ và tên">
+    </div>
 
-        <div class="user-acc">
-            <label for="user">Tài khoản:</label>
-            <input type="text" id="user" name="User" placeholder="Tài khoản">
-        </div>
+    <div class="user-acc">
+      <label for="user">Tài khoản:</label>
+      <input type="text" id="user" name="User" placeholder="Tài khoản">
+    </div>
 
-        <div class="password-acc">
-            <label for="pass">Mật khẩu:</label>
-            <input type="password" id="pass" name="Pass" placeholder="Password">
-        </div>
+    <div class="password-acc">
+      <label for="pass">Mật khẩu:</label>
+      <input type="password" id="pass" name="Pass" placeholder="Password">
+    </div>
 
-        <div class="email-user">
-            <label for="email">Email:</label>
-            <input type="email" name="Email" id="email" placeholder="Nhập email">
-        </div>
+    <div class="email-user">
+      <label for="email">Email:</label>
+      <input type="email" name="Email" id="email" placeholder="Nhập email">
+    </div>
 
-        <div class="phone">
-            <label for="sdt">Số điện thoại:</label>
-            <input type="tel" name="Sdt" id="sdt" placeholder="Nhập số điện thoại">
-        </div>
+    <div class="phone">
+      <label for="sdt">Số điện thoại:</label>
+      <input type="tel" name="Sdt" id="sdt" placeholder="Nhập số điện thoại">
+    </div>
 
-        <div class="address">
-            <label for="Dc">Địa chỉ:</label>
-            <input id="Dc" name="DiaChi" placeholder="Nhập địa chỉ của bạn"></input>
-        </div>
+    <div class="address">
+      <label for="Dc">Địa chỉ:</label>
+      <input id="Dc" name="DiaChi" placeholder="Nhập địa chỉ của bạn"></input>
+    </div>
 
-        <input type="submit" id="sub" name="DangKy" value="Đăng ký">
+    <input type="submit" id="sub" name="DangKy" value="Đăng ký">
 
-        <div class="body-thong-bao">
-            <?php
+    <div class="body-thong-bao">
+      <?php
       if (isset($_POST['DangKy'])) {
         $Ht = $_POST['HoTen'];
         $Us = trim($_POST['User']);
         $Pa = ($_POST['Pass']);
+        $Pa_bam = password_hash($Pa, PASSWORD_DEFAULT);
         $Em = $_POST['Email'];
         $Sd = $_POST['Sdt'];
         $Dc = $_POST['DiaChi'];
@@ -59,7 +60,7 @@
             }
           }
           // Tiếp tục xử lý khi tất cả các giá trị đều hợp lệ
-          $result = SignUp($conn, $Us, $Pa, $Ht, $Em, $Sd, $Dc);
+          $result = SignUp($conn, $Us, $Pa_bam, $Ht, $Em, $Sd, $Dc);
           if ($result) {
             echo "<script>
         alert('Đăng kí tài khoản thành công trên apple store');
@@ -69,6 +70,6 @@
         }
       }
       ?>
-        </div>
-    </form>
+    </div>
+  </form>
 </div>

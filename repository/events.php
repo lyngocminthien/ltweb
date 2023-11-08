@@ -67,39 +67,40 @@ if (isset($_POST['logout'])) {
                         if (isset($_POST['sign-in_submit'])) {
                             $taikhoan = $_POST['account_apple'];
                             $matkhau = ($_POST['password_apple']);
-                            $re = logIn($conn, $taikhoan, $matkhau);
+                            $re = logIn($conn, $taikhoan);
                             if (mysqli_num_rows($re) > 0) {
                                 $r = mysqli_fetch_array($re);
-
-                                // biến session được tạo ở đây
-                                $_SESSION["User"] = $r["User"];
-                                $_SESSION["LoaiTK"] = $r["LoaiTK"];
-                                if ($r['LoaiTK'] == 0) {
-                                    if (isset($_GET["page"])) {
-                                        $p = $_GET["page"]; //pages/$p.".php"
-                                        if ($p == "showroom") {
-                                            $MaSP = $_GET["MaSP"]; // Lấy biến MaSP từ page
-                                            header("Location:index.php?page=" . $p . "&MaSP=" . $MaSP);
-                                        } else {
-                                            header("Location:index.php?page=" . $p);
+                                if (password_verify($matkhau, $r['Pass'])) {
+                                    // biến session được tạo ở đây
+                                    $_SESSION["User"] = $r["User"];
+                                    $_SESSION["LoaiTK"] = $r["LoaiTK"];
+                                    if ($r['LoaiTK'] == 0) {
+                                        if (isset($_GET["page"])) {
+                                            $p = $_GET["page"]; //pages/$p.".php"
+                                            if ($p == "showroom") {
+                                                $MaSP = $_GET["MaSP"]; // Lấy biến MaSP từ page
+                                                header("Location:index.php?page=" . $p . "&MaSP=" . $MaSP);
+                                            } else {
+                                                header("Location:index.php?page=" . $p);
+                                            }
                                         }
+                                    } elseif ($r['LoaiTK'] == 1) {
+                                        header("Location: admin.php");
                                     }
-                                } elseif ($r['LoaiTK'] == 1) {
-                                    header("Location: admin.php");
-                                }
-                            } else {
-                                echo "<div style='font-size: 17px;
+                                } else {
+                                    echo "<div style='font-size: 17px;
                                 color: var(--notification);
                                 font-weight: 600;' 
                                 class='ThongBao'>
                                 Tài khoản hoặc mật khẩu không hợp lệ
                                 </div>";
-                                echo '<script>
+                                    echo '<script>
         document.querySelector(\'.js-modal\').style.display = "flex";
         const close1 = document.querySelector(\'.js-modal-close\');
         close1.addEventListener("click", function(){
             document.querySelector(\'.js-modal\').style.display ="none";
         });</script>';
+                                }
                             }
                         }
 

@@ -48,6 +48,7 @@ if (isset($_POST['signUp'])) {
     $Email = $_POST['mail'];
     $User = trim($_POST['user']);
     $Pass = $_POST['pass'];
+    $Pass_bam = password_hash($Pass, PASSWORD_DEFAULT);
     $Sdt = $_POST['phone'];
     $DiaChi = $_POST['dc'];
     if (!preg_match("/^[a-zA-Z0-9_]+$/", $User)) {
@@ -64,7 +65,7 @@ if (isset($_POST['signUp'])) {
             }
         }
         // Tiếp tục xử lý khi tất cả các giá trị đều hợp lệ
-        $result = SignUpAdmin($conn, $User, $Pass, $HoTen, $Email, $Sdt, $DiaChi, 1);
+        $result = SignUpAdmin($conn, $User, $Pass_bam, $HoTen, $Email, $Sdt, $DiaChi, 1);
         if ($result) {
             echo "<script>
         alert('Cấp tài khoản admin thành công trên apple store');
