@@ -37,6 +37,21 @@ function laySanPham($conn)
     return mysqli_query($conn, $sql);
 }
 
+function laySanPhamLM($conn, $start, $limit)
+{
+    $sql = "SELECT * FROM sanpham ORDER BY MaSP LIMIT $start, $limit";
+    return mysqli_query($conn, $sql);
+}
+
+function layTongSoSanPham($conn)
+{
+    $sql = "SELECT COUNT(*) as total FROM sanpham";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row['total'];
+}
+
+
 function addSP($conn, $TenSP, $MoTa, $Gia, $Hinh, $NoiDung, $MaLoai, $NgayTao)
 {
     $sql = "INSERT INTO sanpham VALUES ('NULL', '$TenSP', '$MoTa', '$Gia', '$Hinh', '$NoiDung', '$MaLoai', '$NgayTao')";
