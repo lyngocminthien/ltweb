@@ -7,14 +7,14 @@ let dots = document.querySelectorAll(".slider .dots li");
 let lengthItems = items.length - 1;
 let active = 0;
 
-// next.onclick = function () {
-//   active = active + 1 <= lengthItems ? active + 1 : 0;
-//   reloadSlider();
-// };
-// prev.onclick = function () {
-//   active = active - 1 >= 0 ? active - 1 : lengthItems;
-//   reloadSlider();
-// };
+next.onclick = function () {
+  active = active + 1 <= lengthItems ? active + 1 : 0;
+  reloadSlider();
+};
+prev.onclick = function () {
+  active = active - 1 >= 0 ? active - 1 : lengthItems;
+  reloadSlider();
+};
 
 // sau 2 giây thì nút next sẽ tự động được click
 let refreshInterval = setInterval(() => {
