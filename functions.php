@@ -170,8 +170,13 @@ function UpdateDH($conn, $MaDH, $ChapThuan)
 }
 function XoaDH($conn)
 {
-    $sql = "DELETE FROM donhang";
-    return mysqli_query($conn, $sql);
+    // Xóa dữ liệu từ bảng ctdh trước
+    $sql_ctdh = "DELETE FROM chitietdonhang";
+    mysqli_query($conn, $sql_ctdh);
+
+    // Xóa dữ liệu từ bảng donhang sau
+    $sql_donhang = "DELETE FROM donhang";
+    return mysqli_query($conn, $sql_donhang);
 }
 
 function layCTDH($conn)

@@ -20,39 +20,23 @@
                     $result_ctdh = layCTDH($conn);
                     while ($row = $result_ctdh->fetch_assoc()) {
                     ?>
-                        <tr class="body-list-info">
-                            <td><?php echo $row['MaCTDH'] ?></td>
-                            <td><?php echo $row['MaDH'] ?></td>
-                            <td><?php echo $row['MaSP'] ?></td>
-                            <td><?php echo $row['SoLuong'] ?></td>
-                            <td class="body-item-name-product"><?php echo $row['TenSP'] ?></td>
-                            <td class="body-item-img">
-                                <img class="product-img" src='assets/images/<?php echo $row['Hinh'] ?>'>
-                            </td>
-                            <td><?php echo $row['NgayDatDon'] ?></td>
-                            <td><?php echo $row['Gia'] = number_format($row["Gia"], 0, ",", "."); ?><sup>đ</sup></td>
-                        </tr>
+                    <tr class="body-list-info">
+                        <td><?php echo $row['MaCTDH'] ?></td>
+                        <td><?php echo $row['MaDH'] ?></td>
+                        <td><?php echo $row['MaSP'] ?></td>
+                        <td><?php echo $row['SoLuong'] ?></td>
+                        <td class="body-item-name-product"><?php echo $row['TenSP'] ?></td>
+                        <td class="body-item-img">
+                            <img class="product-img" src='assets/images/<?php echo $row['Hinh'] ?>'>
+                        </td>
+                        <td><?php echo $row['NgayDatDon'] ?></td>
+                        <td><?php echo $row['Gia'] = number_format($row["Gia"], 0, ",", "."); ?><sup>đ</sup></td>
+                    </tr>
                     <?php
                     }
                     ?>
                 </tbody>
             </table>
-
-            <!-- events button -->
-            <div class="option-cart">
-                <button class="btn-cart" type="submit" name='delete_all'>
-                    <span>Xóa tất cả</span>
-                </button>
-                <button class="btn-cart"><a href="admin.php">Về trang chủ</a></button>
-            </div>
         </form>
-
-        <?php
-        if (isset($_POST["delete_all"])) {
-            XoaCTDH($conn);
-            echo "Xóa tất cả chi tiết đơn hàng thành công";
-        }
-        ?>
-
     </div>
 </section>
