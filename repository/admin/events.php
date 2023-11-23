@@ -43,7 +43,7 @@
             </ul>
         </div>
 
-        <div class="update_group">
+        <!-- <div class="update_group">
             Cập nhật
             <ul class="group-list">
                 <li class="group-item">
@@ -53,7 +53,7 @@
                     <a href="?page=update_loai" class="group-link">Cập nhật loại</a>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
         <div class="add_account-admin">
             <a href="?page=signup">Cấp tài khoản</a>
