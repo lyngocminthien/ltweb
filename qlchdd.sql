@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2023 at 10:15 AM
+-- Generation Time: Nov 12, 2023 at 04:16 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `account` (
   `User` varchar(100) NOT NULL,
-  `Pass` varchar(100) NOT NULL,
+  `Pass` varchar(700) NOT NULL,
   `HoTen` varchar(50) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Sdt` varchar(10) NOT NULL,
@@ -42,10 +42,9 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`User`, `Pass`, `HoTen`, `Email`, `Sdt`, `DiaChi`, `LoaiTK`) VALUES
-('anthanh', '123', 'An Thành', 'anthanh@email.com', '0479301331', 'long an', 0),
-('boo', '123', 'emboo', 'emboo@gmail.com', '0095977593', 'cần thơ', 1),
-('minhthien', '123', 'Lý Ngọc Minh Thiện', 'minhthien@gmail.com', '077589390', 'Cần Thơ', 0),
-('ngoccam', '123', 'Đinh Thị Ngọc Cầm', 'ngoccam@gmail.com', '006573831', 'Sóc Trăng', 1);
+('anthanh', '$2y$10$ou3TREvNirXEGY/E7TZMeu3D5hsuR5EOz7HJL/cyBmj6hxqwC2LXu', 'An Thành', 'anthanh@email.com', '0479301331', 'Long an', 0),
+('minhthien', '$2y$10$1YfjjaeE8vOxkw/IoQEL4.53VmGOUG22V5Zhp.wpnGA8eenX56ISS', 'Ly Ngoc Minh Thien', 'minhthien@gmail.com', '0704834555', 'Cần thơ', 1),
+('ngoccam', '$2y$10$fxX37hQkt/3mzdD1dbNGAeJ.ycwy.MTP.Qn8V1hs/2dPjdjwSXPFe', 'Dinh Thi Ngoc Cam', 'ngoccam@gmail.com', '0328804416', 'Sóc trăng', 1);
 
 -- --------------------------------------------------------
 
@@ -64,17 +63,6 @@ CREATE TABLE `chitietdonhang` (
   `Gia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `chitietdonhang`
---
-
-INSERT INTO `chitietdonhang` (`MaCTDH`, `MaDH`, `MaSP`, `SoLuong`, `TenSP`, `Hinh`, `NgayDatDon`, `Gia`) VALUES
-(277, 6326, 16, 1, 'AirPods Pro\r\nThế hệ thứ 2\r\n(USB-C)', 'airpod_pro.png', '2023-11-05 20:48:00', 6199000),
-(278, 6326, 12, 1, 'Apple Watch SE', 'iwatch_se.jpg', '2023-11-05 20:48:00', 6399000),
-(279, 6326, 8, 1, 'iPad Pro', 'ipad_pro.png', '2023-11-05 20:48:00', 21199000),
-(280, 6326, 5, 1, 'MacBook Pro 13', 'mac_pro13.jpg', '2023-11-05 20:48:00', 39999000),
-(281, 6326, 2, 1, 'iPhone 15 ', 'ip15.png', '2023-11-05 20:48:00', 22999000);
-
 -- --------------------------------------------------------
 
 --
@@ -91,13 +79,6 @@ CREATE TABLE `donhang` (
   `YeuCauHuy` tinyint(1) NOT NULL,
   `ChapThuan` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `donhang`
---
-
-INSERT INTO `donhang` (`MaDH`, `TongSoLuong`, `User`, `TinhTrang`, `NgayTao`, `TongHD`, `YeuCauHuy`, `ChapThuan`) VALUES
-(6326, 5, 'ngoccam', 'Đang giao hàng', '2023-11-05 20:48:44', 96795000, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -231,13 +212,13 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  MODIFY `MaCTDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=282;
+  MODIFY `MaCTDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=284;
 
 --
 -- AUTO_INCREMENT for table `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `MaGioHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=420;
+  MODIFY `MaGioHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=422;
 
 --
 -- AUTO_INCREMENT for table `loai`
