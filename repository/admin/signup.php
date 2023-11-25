@@ -52,7 +52,7 @@ if (isset($_POST['signUp'])) {
     $Sdt = $_POST['phone'];
     $DiaChi = $_POST['dc'];
     if (!preg_match("/^[a-zA-Z0-9_]+$/", $User)) {
-        echo "Tên không hợp lệ!!!";
+        echo "Tài khoản không hợp lệ!!!";
     } else {
         $re = layThongTin($conn);
         while ($r = mysqli_fetch_array($re)) {
