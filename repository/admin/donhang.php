@@ -29,7 +29,8 @@
                         <td><?php echo $row['YeuCauHuy'] ?></td>
                         <td class="body-item-quantity">
                             <input type="hidden" name="MaDH[]" value="<?php echo $row['MaDH'] ?>">
-                            <input type="number" min="0" name="ChapThuan[]" value="<?php echo $row['ChapThuan'] ?>">
+                            <input type="number" min="1" max="3" name="ChapThuan[]"
+                                value="<?php echo $row['ChapThuan'] ?>">
                         </td>
                         <td><?php echo $row['TinhTrang'] ?></td>
                     </tr>

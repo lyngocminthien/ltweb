@@ -74,6 +74,11 @@ function xoaSPID($conn, $MaSP)
     $sql = "DELETE FROM sanpham WHERE MaSP = '$MaSP'";
     return mysqli_query($conn, $sql);
 }
+function xoaSPmaLoai($conn, $MaLoai)
+{
+    $sql = "DELETE FROM sanpham WHERE MaLoai = '$MaLoai'";
+    return mysqli_query($conn, $sql);
+}
 function xoaSP($conn)
 {
     $sql = "DELETE FROM sanpham";
