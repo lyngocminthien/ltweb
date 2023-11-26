@@ -22,7 +22,7 @@ let refreshInterval = setInterval(() => {
 }, 2000);
 
 function reloadSlider() {
-  // offsetLeft sẽ căn từ lề trái đến hết bề ngang của con với thằng cha
+  // offsetLeft là khoảng cách từ slide đầu tiên đến slide được chọn cụ thể là slide đang có index là active
   slider.style.left = -items[active].offsetLeft + "px";
   //
   let last_active_dot = document.querySelector(".slider .dots li.active");
@@ -36,6 +36,7 @@ function reloadSlider() {
   }, 2000);
 }
 
+// Khi click vào mỗi dot thì sẽ cập nhật giá trị của active sau đó giá trị của active được sử dụng trong hàm reloadSlider()
 dots.forEach((li, key) => {
   li.addEventListener("click", () => {
     active = key;

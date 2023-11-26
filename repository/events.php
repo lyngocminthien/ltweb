@@ -21,7 +21,8 @@ if (isset($_POST['logout'])) {
     <form action="index.php" method="GET">
         <input type="hidden" name="page" value="search">
         <div class="search">
-            <input type="text" name="input-search" id="input-search" placeholder="Tìm kiếm trên applestore.com" required>
+            <input type="text" name="input-search" id="input-search" placeholder="Tìm kiếm trên applestore.com"
+                required>
             <button type="submit">
                 <img src="assets/Images/Icon/search-icon.svg" alt="search-icon">
             </button>
@@ -60,7 +61,8 @@ if (isset($_POST['logout'])) {
 
                         <div class="password">
                             <label for="password_apple">Password:</label>
-                            <input type="password" id="password_apple" name="password_apple" placeholder="applestore.com">
+                            <input type="password" id="password_apple" name="password_apple"
+                                placeholder="applestore.com">
                         </div>
 
                         <?php
@@ -121,6 +123,7 @@ if (isset($_POST['logout'])) {
     if (isset($_SESSION['User'])) {
         $re = layThongTin($conn);
         $User = $_SESSION['User'];
+        // vòng lặp để duyệt qua từng user có khớp với người dùng đăng nhập bằng user không nếu khớp thì dừng loop
         while ($r = mysqli_fetch_array($re)) {
             if ($User == $r['User']) {
                 break;
@@ -129,27 +132,27 @@ if (isset($_POST['logout'])) {
 
 
     ?>
-        <form method="POST">
-            <div class="account_login">
-                <div class="account_img">
-                    <img src="assets/images/icon/account-icon.svg" alt="account_login">
-                    <span><?php echo $r['HoTen']; ?></span>
-                </div>
-                <div class="cart_log-out">
-                    <a href="index.php?page=ctdh">Đơn hàng của bạn</a>
-                    <input type="submit" name="logout" value="Đăng xuất">
-                </div>
+    <form method="POST">
+        <div class="account_login">
+            <div class="account_img">
+                <img src="assets/images/icon/account-icon.svg" alt="account_login">
+                <span><?php echo $r['HoTen']; ?></span>
             </div>
-        </form>
+            <div class="cart_log-out">
+                <a href="index.php?page=ctdh">Đơn hàng của bạn</a>
+                <input type="submit" name="logout" value="Đăng xuất">
+            </div>
+        </div>
+    </form>
 
     <?php
     } else {
     ?>
 
-        <button type="submit" class="btnAccount">
-            <img src="assets/Images/Icon/account-icon.svg" alt="account-icon">
-            <span>Đăng nhập</span>
-        </button>
+    <button type="submit" class="btnAccount">
+        <img src="assets/Images/Icon/account-icon.svg" alt="account-icon">
+        <span>Đăng nhập</span>
+    </button>
 
     <?php
     }
