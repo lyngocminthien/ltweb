@@ -86,11 +86,19 @@ $result_sanpham = laySanPhamLM($conn, $start, $productsPerPage);
         <?php
         if (isset($_POST["delete_all"])) {
             xoaSP($conn);
-            echo "Xóa tất cả loại thành công";
+            echo "Xóa tất cả sản phẩm thành công";
+            //     echo "<script>
+            // alert('Xóa tất cả sản phẩm thành công');
+            // window.location.href='?page=product';
+            // </script>.";
         } else if (isset($_POST["deleteProduct"])) {
             $MaSP = $_POST["deleteProduct"];
             xoaSPID($conn, $MaSP);
             echo "Xóa sản phẩm $MaSP thành công";
+            //     echo "<script>
+            // alert('Xóa sản phẩm $MaSP thành công');
+            // window.location.href='?page=product';
+            // </script>.";
         }
         ?>
 

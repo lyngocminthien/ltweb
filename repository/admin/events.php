@@ -43,18 +43,6 @@
             </ul>
         </div>
 
-        <!-- <div class="update_group">
-            Cập nhật
-            <ul class="group-list">
-                <li class="group-item">
-                    <a href="?page=update_product" class="group-link">Cập nhật sản phẩm</a>
-                </li>
-                <li class="group-item">
-                    <a href="?page=update_loai" class="group-link">Cập nhật loại</a>
-                </li>
-            </ul>
-        </div> -->
-
         <div class="add_account-admin">
             <a href="?page=signup">Cấp tài khoản</a>
         </div>
@@ -65,15 +53,15 @@
             if (isset($_SESSION['User'])) {
             ?>
 
-                <form class="admin.php" method="POST">
-                    <div class="admin-here">
-                        <span>
-                            Xin chào admin
-                            <span><?php echo $_SESSION['User'] ?></span>
-                        </span>
-                        <input type="submit" name="thoat" value="Thoát">
-                    </div>
-                </form>
+            <form class="admin.php" method="POST">
+                <div class="admin-here">
+                    <span>
+                        Xin chào admin
+                        <span><?php echo $_SESSION['User'] ?></span>
+                    </span>
+                    <input type="submit" name="thoat" value="Thoát">
+                </div>
+            </form>
 
             <?php
             }

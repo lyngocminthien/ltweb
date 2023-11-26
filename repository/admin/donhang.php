@@ -20,20 +20,28 @@
                     $result_donhang = layDonHang($conn);
                     while ($row = $result_donhang->fetch_assoc()) {
                     ?>
-                    <tr class="body-list-info">
-                        <td><?php echo $row['MaDH'] ?></td>
-                        <td><?php echo $row['User'] ?></td>
-                        <td><?php echo $row['TongSoLuong'] ?></td>
-                        <td><?php echo number_format($row["TongHD"], 0, ",", "."); ?><sup>đ</sup></td>
-                        <td><?php echo $row['NgayTao'] ?></td>
-                        <td><?php echo $row['YeuCauHuy'] ?></td>
-                        <td class="body-item-quantity">
-                            <input type="hidden" name="MaDH[]" value="<?php echo $row['MaDH'] ?>">
-                            <input type="number" min="1" max="3" name="ChapThuan[]"
-                                value="<?php echo $row['ChapThuan'] ?>">
-                        </td>
-                        <td><?php echo $row['TinhTrang'] ?></td>
-                    </tr>
+                        <tr class="body-list-info">
+                            <td><?php echo $row['MaDH'] ?></td>
+                            <td><?php echo $row['User'] ?></td>
+                            <td><?php echo $row['TongSoLuong'] ?></td>
+                            <td><?php echo number_format($row["TongHD"], 0, ",", "."); ?><sup>đ</sup></td>
+                            <td><?php echo $row['NgayTao'] ?></td>
+                            <td><?php echo $row['YeuCauHuy'] ?></td>
+                            <td class="body-item-quantity">
+                                <input type="hidden" name="MaDH[]" value="<?php echo $row['MaDH'] ?>">
+                                <!-- <input type="number" min="1" max="3" name="ChapThuan[]" value="
+                                <?php
+                                // echo $row['ChapThuan'] 
+                                ?>
+                                "> -->
+                                <select style="font-size: 16px; font-weight: 600; padding: 5px 10px; border-radius: 15px;" name="ChapThuan[]" id="ChapThuan">
+                                    <option value="Huy">Hủy</option>
+                                    <option value="Giao don">Giao đơn</option>
+                                    <option value="Loi">Lỗi</option>
+                                </select>
+                            </td>
+                            <td><?php echo $row['TinhTrang'] ?></td>
+                        </tr>
                     <?php
                     }
                     ?>
@@ -53,13 +61,17 @@
         </form>
 
         <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["MaDH"])) {
+            print_r($_POST["MaDH"]);
+            echo "<br>";
+        }
+
         if (isset($_POST["update_all"])) {
             for ($i = 0; $i < count($_POST["MaDH"]); $i++) {
                 $MaDH = $_POST["MaDH"][$i];
                 $ChapThuan = $_POST["ChapThuan"][$i];
 
-                if ($ChapThuan > 3) {
-                } else {
+                if ($ChapThuan == "Huy" or $ChapThuan == "Giao don" or $ChapThuan == "Loi") {
                     UpdateDH($conn, $MaDH, $ChapThuan);
                     echo "Cập nhật đơn hàng $MaDH thành công</br>";
                 }

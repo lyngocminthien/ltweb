@@ -71,16 +71,16 @@ if (isset($_SESSION['User'])) {
                     $r = mysqli_fetch_array($re);
 
                     // Admin sẽ xử lí việc chấp thuận
-                    if ($r['ChapThuan'] == 1) {
+                    if ($r['ChapThuan'] == "Huy") {
                         $sql = mysqli_query($conn, "UPDATE donhang SET TinhTrang='Đã hủy' WHERE MaDH='$MaDH'");
                         $sql = mysqli_query($conn, "UPDATE donhang SET YeuCauHuy='0' WHERE MaDH='$MaDH'");
                         echo 'Đã hủy đơn ' . $MaDH . ' thành công';
-                    } elseif ($r['ChapThuan'] == 2) {
+                    } elseif ($r['ChapThuan'] == "Giao don") {
                         $sql = mysqli_query($conn, "UPDATE donhang SET TinhTrang='Đang giao hàng' WHERE MaDH='$MaDH'");
                         echo 'Đơn hàng ' . $MaDH . ' đang được giao tới bạn...';
-                    } elseif ($r['ChapThuan'] == 3) {
+                    } elseif ($r['ChapThuan'] == "Loi") {
                         $sql = mysqli_query($conn, "UPDATE donhang SET TinhTrang='Không thành công' WHERE MaDH='$MaDH'");
-                        echo 'Có thể kiện hàng của bạn đang gặp sự cố. Liên hệ cộng tác viên để được phản hồi';
+                        echo 'Có thể kiện hàng của bạn đang gặp sự cố';
                     } elseif ($r['YeuCauHuy'] == 1) {
                         $sql = mysqli_query($conn, "UPDATE donhang SET TinhTrang='Yêu cầu hủy đơn' WHERE MaDH='$MaDH'");
                         echo 'Đang chờ hủy đơn...';

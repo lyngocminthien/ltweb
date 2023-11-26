@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2023 at 04:16 PM
+-- Generation Time: Nov 26, 2023 at 09:23 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -43,8 +43,7 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`User`, `Pass`, `HoTen`, `Email`, `Sdt`, `DiaChi`, `LoaiTK`) VALUES
 ('anthanh', '$2y$10$ou3TREvNirXEGY/E7TZMeu3D5hsuR5EOz7HJL/cyBmj6hxqwC2LXu', 'An Thành', 'anthanh@email.com', '0479301331', 'Long an', 0),
-('minhthien', '$2y$10$1YfjjaeE8vOxkw/IoQEL4.53VmGOUG22V5Zhp.wpnGA8eenX56ISS', 'Ly Ngoc Minh Thien', 'minhthien@gmail.com', '0704834555', 'Cần thơ', 1),
-('ngoccam', '$2y$10$fxX37hQkt/3mzdD1dbNGAeJ.ycwy.MTP.Qn8V1hs/2dPjdjwSXPFe', 'Dinh Thi Ngoc Cam', 'ngoccam@gmail.com', '0328804416', 'Sóc trăng', 1);
+('minhthien', '$2y$10$1YfjjaeE8vOxkw/IoQEL4.53VmGOUG22V5Zhp.wpnGA8eenX56ISS', 'Ly Ngoc Minh Thien', 'minhthien@gmail.com', '0704834555', 'Cần thơ', 1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +76,7 @@ CREATE TABLE `donhang` (
   `NgayTao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `TongHD` int(11) NOT NULL,
   `YeuCauHuy` tinyint(1) NOT NULL,
-  `ChapThuan` tinyint(1) NOT NULL
+  `ChapThuan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -141,8 +140,8 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `MoTa`, `Gia`, `Hinh`, `NoiDung`, `MaLoai`, `NgayTao`) VALUES
-(1, 'iPhone 15 Pro', 'Một iPhone cực đỉnh, cực chất.', 28999000, 'ip15pro.png', 'Màn hình: OLED 6.1\"Super Retina XDR\r\nHệ điều hành: iOS 16\r\nCamera sau: 2 camera 12 MP\r\nCamera trước: 12 MP\r\nChip: Apple A15 Bionic\r\nRAM: 6 GB\r\nDung lượng lưu trữ: 128 GB\r\nSIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc: 3279 mAh20 W', 1, '2023-06-11'),
-(2, 'iPhone 15 ', 'Siêu mạnh mẽ trên mọi mặt.', 22999000, 'ip15.png', 'Màn hình: OLED 6.1\"Super Retina XDR\r\nHệ điều hành: iOS 16\r\nCamera sau: 2 camera 12 MP\r\nCamera trước: 12 MP\r\nChip: Apple A15 Bionic\r\nRAM: 6 GB\r\nDung lượng lưu trữ: 128 GB\r\nSIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc: 3279 mAh20 W', 1, '2023-06-11'),
+(1, 'iPhone 15 Pro', 'Một iPhone cực đỉnh.', 28999000, 'ip15pro.png', 'Màn hình: OLED 6.1\"Super Retina XDR\r\nHệ điều hành: iOS 16\r\nCamera sau: 2 camera 12 MP\r\nCamera trước: 12 MP\r\nChip: Apple A15 Bionic\r\nRAM: 6 GB\r\nDung lượng lưu trữ: 128 GB\r\nSIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc: 3279 mAh20 W', 1, '2023-06-11'),
+(2, 'iPhone 15', 'Siêu mạnh mẽ trên mọi mặt.', 22999000, 'ip15.png', 'Màn hình: OLED 6.1\"Super Retina XDR\r\nHệ điều hành: iOS 16\r\nCamera sau: 2 camera 12 MP\r\nCamera trước: 12 MP\r\nChip: Apple A15 Bionic\r\nRAM: 6 GB\r\nDung lượng lưu trữ: 128 GB\r\nSIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc: 3279 mAh20 W', 1, '2023-06-11'),
 (3, 'iPhone 14', 'Luôn tuyệt vời như thế.', 19999000, 'ip14.png', 'Màn hình: OLED 6.1\"Super Retina XDR\r\nHệ điều hành: iOS 16\r\nCamera sau: 2 camera 12 MP\r\nCamera trước: 12 MP\r\nChip: Apple A15 Bionic\r\nRAM: 6 GB\r\nDung lượng lưu trữ: 128 GB\r\nSIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc: 3279 mAh20 W', 1, '2023-06-11'),
 (4, 'iPhone SE', 'Thực sự mạnh mẽ. Thực sự giá trị.', 11999000, 'ipse.png', 'Màn hình: OLED 6.1\"Super Retina XDR\r\nHệ điều hành: iOS 16\r\nCamera sau: 2 camera 12 MP\r\nCamera trước: 12 MP\r\nChip: Apple A15 Bionic\r\nRAM: 6 GB\r\nDung lượng lưu trữ: 128 GB\r\nSIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc: 3279 mAh20 W', 1, '2023-06-11'),
 (5, 'MacBook Pro 13', 'Máy tính xách tay Mac tiên tiến nhất cho các luồng công việc phức tạp.', 39999000, 'mac_pro13.jpg', 'Màn hình: OLED 6.1\"Super Retina XDR\r\nHệ điều hành: iOS 16\r\nCamera sau: 2 camera 12 MP\r\nCamera trước: 12 MP\r\nChip: Apple A15 Bionic\r\nRAM: 6 GB\r\nDung lượng lưu trữ: 128 GB\r\nSIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc: 3279 mAh20 W', 2, '2023-06-11'),
@@ -212,25 +211,25 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  MODIFY `MaCTDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=284;
+  MODIFY `MaCTDH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=303;
 
 --
 -- AUTO_INCREMENT for table `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `MaGioHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=422;
+  MODIFY `MaGioHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
 
 --
 -- AUTO_INCREMENT for table `loai`
 --
 ALTER TABLE `loai`
-  MODIFY `MaLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `MaLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+  MODIFY `MaSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- Constraints for dumped tables

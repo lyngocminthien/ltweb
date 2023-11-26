@@ -22,6 +22,9 @@ function xoaLoaiID($conn, $MaLoai)
 }
 function xoaLoai($conn)
 {
+    $sql = "DELETE FROM sanpham";
+    mysqli_query($conn, $sql);
+
     $sql = "DELETE FROM loai";
     return mysqli_query($conn, $sql);
 }
